@@ -1,0 +1,61 @@
+#loader {
+    z-index: 5000;
+    background-color: #000000ed;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0,0);
+}
+#loader-img-container {
+    height: 140px;
+    width: 140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    display: block;
+    border-radius: 50%;
+    z-index: 50;
+}
+.loader-logo_image {
+    height: 100%;
+    width: auto;
+    display: block;
+    margin: auto;
+    animation-name: scale-loop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    margin-top: -8px;
+}
+#loader-circle {
+    /* background: var(--gradient); */
+    position: fixed;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    /* border: 20px solid #ffce00; */
+    border-top: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* animation-name: rotate-loop;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+}
+
+@keyframes rotate-loop {
+    0%   {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+@keyframes scale-loop {
+    0%   {transform: scale(1.0);}
+    30%   {transform: scale(1.2);}
+    40%   {transform: scale(1.05);}
+    80%   {transform: scale(1.2);}
+    100%   {transform: scale(1.0);}
+}

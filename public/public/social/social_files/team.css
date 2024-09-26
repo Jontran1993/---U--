@@ -1,0 +1,300 @@
+:root {
+  --primary: #ffce00;
+  --secondary: #bfe756;
+  --dark: #212121;
+  --light: #fff;
+}
+#members {
+  padding: 50px;
+  background-color: ghostwhite;
+  min-height: 600px;
+}
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.member-card {
+  margin: 20px 20px 20px 20px;
+  width: 280px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.member-card:hover .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  /* background-image: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--secondary)
+  ); */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img.front-img {
+  width: 150px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card__face--front h2.front-name {
+  color: var(--primary-color);
+  font-size: 30px;
+  margin: 0px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card__face--front .front-position {
+  color: rgba(0, 0, 0, 0.527);
+  font-size: 20px;
+  margin: 0px;
+  text-align: center;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 0px 0px 10px 0px;
+  display: flex;
+}
+
+.card__header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--primary) 10%,
+    var(--secondary) 115%
+  );
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.pp {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: auto 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  object-fit: cover;
+}
+
+.card__header h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.card__body {
+  padding: 30px;
+}
+
+.card__body h3 {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.card__body p {
+  color: #737373;
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 6px 0px;
+}
+.member-card .card__face--front::after {
+  content: "";
+  display: block;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20%;
+  width: 30%;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--primary) 10%,
+    var(--secondary) 115%
+  );
+  z-index: 0;
+  border-radius: 0px 100% 0% 0px;
+}
+.member-card .card__face--front::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 20%;
+  width: 30%;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--primary) 10%,
+    var(--secondary) 115%
+  );
+  z-index: 1;
+  border-radius: 0% 0% 0% 100%;
+}
+
+#influencers {
+  padding: 50px;
+  background-color: ghostwhite;
+  min-height: 450px;
+}
+
+.influencers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1020px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.influencer-card {
+  width: 240px;
+  margin: 15px 5px;
+}
+
+.influencer-card .card__face--front {
+  background: none;
+  background-color: none;
+}
+
+#talks {
+  padding: 50px 0px;
+  background-color: ghostwhite;
+  min-height: 600px;
+}
+
+.talks-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover;
+}
+
+.video-card {
+  max-width: 90vw;
+  width: 330px;
+  border-radius: 20px;
+  margin: 10px;
+}
+.video-holder {
+  padding: 5px;
+  border-radius: 20px;
+  background: var(--gradient);
+}
+.video-maker {
+  display: none;
+  margin: 3px 3px 3px auto;
+  text-align: right;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  font-size: 24px;
+  font-style: italic;
+}
+.member-card .card__body p::-webkit-scrollbar {
+  background-color: #fff;
+  width: 3px;
+}
+.member-card .card__body p::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.member-card .card__body p::-webkit-scrollbar-thumb {
+  background-color: rgb(214, 214, 214);
+  border-radius: 5px;
+}
+@media screen and (max-width: 1440px) {
+  /* .member-card {
+    width: 300px;
+    height: 460px;
+  } */
+  .member-card {
+    width: 255px;
+    height: 410px;
+    margin: 6px;
+  }
+  .member-card .card__body p {
+    max-height: 158px;
+    width: calc(100% + 20px);
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 560px) {
+  #members,
+  #influencers,
+  #talks {
+    padding: 50px 0px;
+  }
+  .member-card {
+    margin: 10px 15px;
+    min-width: 80vw;
+    width: 90vw;
+    height: calc(80vw * 6 / 4);
+    perspective: 1000px;
+  }
+  .members-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    max-width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 20px 0px;
+  }
+}

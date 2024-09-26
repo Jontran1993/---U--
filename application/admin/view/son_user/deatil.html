@@ -1,0 +1,76 @@
+{extend name="public:template" /}
+
+{block name="content"}
+<div class="section-header">
+  <div class="section-header-breadcrumb">
+    <div class="breadcrumb-item active"><a href="{:url('Index/index')}">控制台</a></div>
+    <div class="breadcrumb-item">个人资料</div>
+  </div>
+</div>
+
+<div class="section-body">
+  <h2 class="section-title">个人资料 - 编辑</h2>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <form id="data-form" autocomplete=off class="needs-validation" novalidate="">
+          <input type="hidden" name="userId" value="{$data.userId}">
+          <div class="card-body">
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">账号</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="text" class="form-control" name="email" required="" value="{$data.email}">
+                <div class="invalid-feedback">请填写账号</div>
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">密码</label>
+              <div class="col-sm-12 col-md-7">
+                <input type="password" class="form-control" name="password">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row mb-4">
+            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+            <div class="col-sm-12 col-md-7">
+              <button type="button" class="btn btn-primary submit">提交</button>
+            </div>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{/block}
+
+
+{block name="extend-script"}
+<script type="text/javascript">
+
+  $('.submit').click(function () {
+    $("#data-form").addClass('was-validated');
+    if ($("#data-form")[0].checkValidity() === false)
+      return ;
+
+    $('.submit').attr('disabled', true);
+
+    $.ajax({
+      url: "{:url('User/store')}",
+      method: 'post',
+      data: $("#data-form").serialize(),
+      dataType: 'json',
+      success(res) {
+        $('.submit').attr('disabled', false);
+        if (res.success === true) {
+          swal('操作成功', {buttons: false, icon: 'success'});
+          setTimeout(function () { window.location.href= "{:url('User/index')}" }, 1500)
+        }
+        if (res.success === false) swal('出现错误', res.err_msg, 'error');
+      }
+    })
+  })
+</script>
+{/block}

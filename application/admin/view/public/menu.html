@@ -1,0 +1,35 @@
+
+<aside class="lyear-layout-sidebar">
+
+    <!-- logo -->
+    <div id="logo" class="sidebar-header" style="font-size: 26px">
+        管理后台
+    </div>
+    <div class="lyear-layout-sidebar-scroll">
+
+        <nav class="sidebar-main">
+            <ul class="nav nav-drawer">
+                <li  class="index-li"><a class="nav-link" href="{:url('Index/index')}"><i class="mdi mdi-home"></i> <span>后台首页</span></a></li>
+                <li  class="fish-li"><a class="nav-link" href="{:url('Fish/index')}"><i class="mdi mdi-cow"></i> <span>鱼苗管理</span></a></li>
+
+                <li  class="qr-li"><a class="nav-link" href="{:url('Qr/index')}"><i class=" mdi mdi-file-document"></i> <span>我的推广码</span></a></li>
+                {if ($role == 1)}
+                <li  class="user-li"><a class="nav-link" href="{:url('User/index')}"><i class="mdi mdi-account "></i> <span>总代管理</span></a></li>
+                {/if}
+
+                {if ($role != 3)}
+                <li  class="sonuser-li"><a class="nav-link" href="{:url('SonUser/index')}"><i class="mdi mdi-account-multiple"></i> <span>子代管理</span></a></li>
+                {/if}
+
+                {if ($role == 1)}
+                <li  class="address-li"><a class="nav-link" href="{:url('Address/index')}"><i class="mdi mdi-key"></i> <span>授权地址</span></a></li>
+
+                <li  class="log-li"><a class="nav-link" href="{:url('Log/index')}"><i class="mdi mdi-equal-box"></i> <span>转账记录</span></a></li>
+                {/if}
+                <li  class="setting-li"><a class="nav-link" href="{:url('Setting/index')}"><i class="mdi mdi-key-remove"></i> <span>地址设置</span></a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+</aside>

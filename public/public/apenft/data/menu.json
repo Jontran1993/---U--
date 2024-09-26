@@ -1,0 +1,24 @@
+{
+    "cn": [
+        {"tit":"行业背景", "n":false, "id":1},
+        {"tit":"使命", "n":false, "id":2},
+        {"tit":"艺术作品", "n":false, "id":3},
+        {"tit":"艺术品保管措施", "n":false, "id":4},
+        {"tit":"NFT TOKEN", "n":false, "id":5},
+        {"tit":"平台治理", "n":true, "id":-1, "link":"/vote/?lang=zh-CN"},
+        {"tit":"艺术家列表", "n":false, "id":6},
+        {"tit":"媒体资料", "n":false, "id":7},
+        {"tit":"关于我们", "n":false, "id":8}
+    ],
+    "en": [
+        {"tit":"BACKGROUND", "n":false, "id":1},
+        {"tit":"PROJECT MISSION", "n":false, "id":2},
+        {"tit":"ARTWORKS", "n":false, "id":3},
+        {"tit":"ARTISTIC STORAGE", "n":false, "id":4},
+        {"tit":"NFT TOKEN", "n":false, "id":5},
+        {"tit":"PLATFORM GOVERNANCE", "n":true, "id":-1, "link":"/vote/?lang=en-US"},
+        {"tit":"ARTIST INTRODUCTION", "n":false, "id":6},
+        {"tit":"PRESS", "n":false, "id":7},
+        {"tit":"ABOUT US", "n":false, "id":8}
+    ]
+}

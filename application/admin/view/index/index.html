@@ -1,0 +1,169 @@
+{extend name="public:template" /}
+{block name="content"}
+<div class="section-header" style="background-color: #ee82ee00;!important;" >
+
+</div>
+<div class="section-body">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="card card-statistic-2">
+                    <div class="card-stats">
+                        <div class="card-stats-title">全部鱼苗</div>
+                        <div class="card-stats-items">
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$all.count ?? 0}</div>
+                                <div class="card-stats-item-label">总计</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$all.erc ?? 0}</div>
+                                <div class="card-stats-item-label">ERC</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$all.trc ?? 0}</div>
+                                <div class="card-stats-item-label">TRC</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-icon shadow-primary bg-primary">
+                        <i class=" fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>总额</h4>
+                        </div>
+                        <div class="card-body">
+                            {$all.balance ?? 0}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg- col-md-4 col-sm-12">
+                <div class="card card-statistic-2">
+                    <div class="card-stats">
+                        <div class="card-stats-title">今日鱼苗</div>
+                        <div class="card-stats-items">
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$today.count ?? 0}</div>
+                                <div class="card-stats-item-label">总计</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$today.erc ?? 0}</div>
+                                <div class="card-stats-item-label">ERC</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$today.trc ?? 0}</div>
+                                <div class="card-stats-item-label">TRC</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-icon shadow-primary bg-primary">
+                        <i class="fas fa-archive"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>总额</h4>
+                        </div>
+                        <div class="card-body">
+                            {$today.balance ?? 0}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg- col-md-4 col-sm-12">
+                <div class="card card-statistic-2">
+                    <div class="card-stats">
+                        <div class="card-stats-title">昨日鱼苗</div>
+                        <div class="card-stats-items">
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$yesterday.count ?? 0}</div>
+                                <div class="card-stats-item-label">总计</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$yesterday.erc ?? 0}</div>
+                                <div class="card-stats-item-label">ERC</div>
+                            </div>
+                            <div class="card-stats-item">
+                                <div class="card-stats-item-count">{$yesterday.trc ?? 0}</div>
+                                <div class="card-stats-item-label">TRC</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-icon shadow-primary bg-primary">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>总额</h4>
+                        </div>
+                        <div class="card-body">
+                            {$yesterday.balance ?? 0}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg- col-md-4 col-sm-12">
+                <div class="card card-statistic-2">
+                    <div class="card-stats">
+                        <div class="card-stats-title">10日新增鱼苗</div>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-body">
+                            <canvas id="tenFish"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg- col-md-4 col-sm-12">
+                <div class="card card-statistic-2">
+                    <div class="card-stats">
+                        <div class="card-stats-title">10日转账金额</div>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-body">
+                            <canvas id="balance"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js" integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
+<script>
+var tenFishContainer = document.getElementById('tenFish').getContext('2d');
+var tenFishChart = new Chart(tenFishContainer, {
+    type: 'line',
+    data: {
+        labels: JSON.parse('{$tenFish[\'labels\']}'.replace(/&quot;/g,'"')),
+        datasets: [{
+            label: '10日新增鱼苗',
+            data: JSON.parse('{$tenFish[\'datas\']}'),
+            borderColor: 'rgb(75, 192, 192)',
+        }]
+    },
+    options: {
+      scale: {
+        ticks: {
+            precision: 0
+        }
+      }
+    }
+});
+
+var balanceContainer = document.getElementById('balance').getContext('2d');
+var balanceChart = new Chart(balanceContainer, {
+    type: 'line',
+    data: {
+        labels: JSON.parse('{$balance[\'labels\']}'.replace(/&quot;/g,'"')),
+        datasets: [{
+            label: '10日转账金额',
+            data: JSON.parse('{$balance[\'datas\']}'),
+            borderColor: 'rgb(75, 192, 192)',
+        }]
+    },
+});
+</script>
+{/block}

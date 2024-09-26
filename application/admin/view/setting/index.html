@@ -1,0 +1,67 @@
+{extend name="public:template" /}
+{block name="content"}
+<div class="section-body">
+    <h2 class="section-title">显示地址设置</h2>
+    <div style="text-align: center;font-size: 23px;color: red">（用于扫码后显示的地址）</div>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="setting-form" autocomplete=off class="needs-validation" novalidate="">
+                <div class="card" id="settings-card">
+                    <div class="card-body">
+                        <div class="form-group row align-items-center">
+                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">ERC</label>
+                            <div class="col-sm-6 col-md-9 row no-gutters">
+                                <input type="text" name="erc" class="form-control" value="{$erc}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center">
+                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">TRC</label>
+                            <div class="col-sm-6 col-md-9 row no-gutters">
+                                <input type="text" name="trc" class="form-control" value="{$trc}">
+                            </div>
+                        </div>
+
+
+                        <div class="card-footer bg-whitesmoke text-md-right">
+                            <button  type="button" class="btn btn-primary" id="save-btn">保存</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="extend-script"}
+<script type="text/javascript">
+    $("#save-btn").click(function() {
+        let save_button = $(this).find('#save-btn'),
+            output_status = $("#output-status"),
+            card = $('#settings-card');
+
+        let card_progress = $.cardProgress(card, {
+            spinner: false
+        });
+        save_button.addClass('btn-progress');
+        output_status.html('');
+
+        $.ajax({
+            url: "{:url('Setting/update')}",
+            method: 'post',
+            data: $("#setting-form").serialize(),
+            dataType: 'json',
+            success(res) {
+                if (res.success === true) {
+                    swal('操作成功', {buttons: false, icon: 'success'});
+                    setTimeout(function () { location.reload() }, 1500)
+                }
+                if (res.success === false) swal('出现错误', res.err_msg, 'error');
+            }
+        })
+
+        return false;
+    });
+</script>
+{/block}
+

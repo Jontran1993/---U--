@@ -1,0 +1,98 @@
+{extend name="public:template" /}
+
+{block name="content"}
+<h2 class="section-title">子代管理</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-form ml-auto">
+                        <a href="{:url('SonUser/detail')}" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> 创建</a>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-md">
+                            <tr>
+                                <th>用户编号</th>
+                                <th>邮箱</th>
+                                <th>是否启用</th>
+                                <th>创建时间</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            {volist name="data" id="vo" key="key"}
+                            <tr>
+                                <td>{$vo.userId}</td>
+                                <td>{$vo.email}</td>
+                                <td>{$vo.is_delete  == 0 ? '启用' : '停用'}</td>
+                                <td>{$vo.create_time}</td>
+                                <td>
+                                    <a href="javascript:;" class="btn btn-icon icon-left btn-primary mr-3" onclick="enable('{$vo.userId}')"> {$vo.is_delete  == 1 ? '启用' : '停用'}</a>
+                                    <a href="{:url('SonUser/detail', ['id' => $vo.userId])}" class="btn btn-icon icon-left btn-primary mr-3"><i class="far fa-edit"></i> 编辑</a>
+                                    <a href="javascript:;" class="btn btn-icon icon-left btn-danger" onclick="delImage('{$vo.userId}')"><i class="fas fa-times"></i> 删除</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        {$data|raw}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}
+
+
+{block name="extend-script"}
+<script type="text/javascript">
+
+    function enable(id) {
+        $.ajax({
+            url: "{:url('SonUser/enable')}",
+            method: 'post',
+            data: {id: id},
+            dataType: 'json',
+            success(res) {
+                if (res.success === true) {
+                    swal('操作成功', {buttons: false, icon: 'success'});
+                    setTimeout(function () { location.reload() }, 1500)
+                }
+                if (res.success === false) swal('出现错误', res.err_msg, 'error');
+            }
+        })
+    }
+
+    function delImage(id) {
+        swal({
+            title: '确定删除该数据？',
+            icon: 'warning',
+            buttons: ['取消', '确认'],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (! willDelete)
+                    return;
+
+                $.ajax({
+                    url: "{:url('SonUser/destroy')}",
+                    method: 'post',
+                    data: {id: id},
+                    dataType: 'json',
+                    success(res) {
+                        if (res.success === true) {
+                            swal('操作成功', {buttons: false, icon: 'success'});
+                            setTimeout(function () { location.reload() }, 1500)
+                        }
+                        if (res.success === false) swal('出现错误', res.err_msg, 'error');
+                    }
+                })
+            });
+    }
+</script>
+{/block}

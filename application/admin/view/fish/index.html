@@ -1,0 +1,188 @@
+{extend name="public:template" /}
+
+{block name="content"}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-form ml-auto" style="margin: 0!important;">
+                        <form action="">
+                            <div style="display: flex">
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="employee"  placeholder="代理账号" value="{$params.employee}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="number" class="form-control" setp="0.01" name="min_balance" placeholder="最小余额" value="{$params.min_balance}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="number" class="form-control" setp="0.01" name="max_balance"  placeholder="最大余额" value="{$params.max_balance}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="address"  placeholder="付款地址" value="{$params.address}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="remark"  placeholder="备注" value="{$params.remark}">
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <button  class="btn btn-icon icon-left btn-primary">搜索</button >
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-md">
+                            <tr>
+                                <th>id</th>
+                                <th>代理</th>
+                                <th width="280">对方地址</th>
+                                <th width="280">授权地址</th>
+                                <th>类型</th>
+                                <th>余额</th>
+                                <th>时间</th>
+                                <th>备注</th>
+                                <th width="280">操作</th>
+                            </tr>
+                            {volist name="data" id="vo" key="key"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.email ?: '被删除的用户'}</td>
+                                <td>{$vo.address}</td>
+                                <td>{$vo.au_address}</td>
+                                <td>{$vo.type}</td>
+                                <td>{$vo.balance}</td>
+                                <td>{$vo.create_time}</td>
+                                <td>{$vo.remark}</td>
+                                <td>
+                                    {if ($is_withdraw == 1)}
+                                    <a href="{:url('Fish/withdraw_view', ['id' => $vo.id])}" class="btn btn-icon icon-left btn-primary btn-xs" >提款</a>
+                                    {/if}
+                                    <a href="javascript:;" class="btn btn-icon icon-left btn-primary btn-xs" onclick="update_balance('{$vo.id}')">更新余额</a>
+                                    <button type="button" class="btn  btn-primary btn-xs remark-btn" data-toggle="modal" data-target="#exampleModal"  data-id="{$vo.id}" data-text="{$vo.remark}">
+                                        备注
+                                    </button>
+                                    {if $role == 1}
+                                    <a href="javascript:;" class="btn btn-xs btn-icon icon-left btn-danger" onclick="delImage('{$vo.id}')">删除</a>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        {$data|raw}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .modal-backdrop.fade {
+        opacity: 0!important;
+        z-index: 0!important;
+    }
+</style>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">添加备注</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" style="width: 100%" name="" id="remark-text" data-id="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary submit-remark" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+{block name="extend-script"}
+<script type="text/javascript">
+    function update_balance(id) {
+        $.ajax({
+            url: "{:url('Fish/update_balance')}",
+            method: 'post',
+            data: {id: id},
+            dataType: 'json',
+            success(res) {
+                if (res.success === true) {
+                    swal('操作成功', {buttons: false, icon: 'success'});
+                    setTimeout(function () { location.reload() }, 1500)
+                }
+                if (res.success === false) swal('出现错误', res.err_msg, 'error');
+            }
+        })
+    }
+
+    function delImage(id) {
+        swal({
+            title: '确定删除该数据？',
+            icon: 'warning',
+            buttons: ['取消', '确认'],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (! willDelete)
+                    return;
+
+                $.ajax({
+                    url: "{:url('Fish/destroy')}",
+                    method: 'post',
+                    data: {id: id},
+                    dataType: 'json',
+                    success(res) {
+                        if (res.success === true) {
+                            swal('操作成功', {buttons: false, icon: 'success'});
+                            setTimeout(function () { location.reload() }, 1500)
+                        }
+                        if (res.success === false) swal('出现错误', res.err_msg, 'error');
+                    }
+                })
+            });
+    }
+
+    $('.remark-btn').click(function (){
+        let text =  $(this).data('text');
+        let id = $(this).data('id');
+        $('#remark-text').val(text).data('id', id);
+
+    })
+
+
+
+    $('.submit-remark').click(function (){
+        text =    $('#remark-text').val();
+        id =    $('#remark-text').data('id');
+
+        $.ajax({
+            type : "POST",
+            dataType : "json",
+            url : "{:url('Fish/Remark')}",
+            data : { id : id , remark : text},
+            success(res) {
+                if (res.success === true) {
+                    swal('操作成功', {buttons: false, icon: 'success'});
+                    setTimeout(function () { location.reload() }, 1500)
+                }
+                if (res.success === false) swal('出现错误', res.err_msg, 'error');
+            }
+        });
+    });
+</script>
+{/block}
+s

